@@ -21,6 +21,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="title_activity_scrolling">Register</string>
     <string name="title_activity_navigation">Home</string>
+    <string name="registration">Registration</string>
+    <string name="minimum_password">minimum password</string>
+    <string name="auth_failed">auth failed</string>
 </resources>
