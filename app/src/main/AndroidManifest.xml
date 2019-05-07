@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.smartrestro">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -11,8 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistrationActivity"
-            android:label="@string/registration"></activity>
+        <activity android:name=".MyOrderActivity"
+                  android:label="My Order"></activity>
+        <activity
+            android:name=".PromotionActivity"
+            android:label="Promotion" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/registration" />
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"

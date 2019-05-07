@@ -19,6 +19,21 @@
         <item
             android:id="@+id/nav_menus"
             android:title="Menu Items" />
+        <item
+            android:id="@+id/nav_myOrder"
+            android:title="Menu Items" />
+        <item
+            android:id="@+id/nav_myAccount"
+            android:title="My Account" />
+        <item
+            android:id="@+id/nav_myDetails"
+            android:title="My Details" />
+        <item
+            android:id="@+id/nav_shippingPayment"
+            android:title="Shipping and Payments" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="About Us" />
     </group>
 
     <item android:title="Communicate">
@@ -26,11 +41,23 @@
             <item
                 android:id="@+id/nav_share"
 
-                android:title="" />
+                android:title="Share" />
             <item
                 android:id="@+id/nav_send"
 
-                android:title="" />
+                android:title="Send" />
+        </menu>
+    </item>
+    <item android:title="Information">
+        <menu>
+            <item
+                android:id="@+id/nav_termsCondition"
+
+                android:title="Terms and conditions" />
+            <item
+                android:id="@+id/nav_privacy"
+
+                android:title="Privacy" />
         </menu>
     </item>
 
