@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyOrderActivity"
-                  android:label="My Order"></activity>
+        <activity android:name=".PaymentActivity"
+                  android:label="Payment"></activity>
+        <activity
+            android:name=".MyOrderActivity"
+            android:label="My Order" />
         <activity
             android:name=".PromotionActivity"
             android:label="Promotion" />

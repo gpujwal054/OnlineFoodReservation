@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "294966540446",
-    "firebase_url": "https://smart-restro-232a3.firebaseio.com",
-    "project_id": "smart-restro-232a3",
-    "storage_bucket": "smart-restro-232a3.appspot.com"
+    "project_number": "224923572874",
+    "firebase_url": "https://onlinefoodreservation-1259e.firebaseio.com",
+    "project_id": "onlinefoodreservation-1259e",
+    "storage_bucket": "onlinefoodreservation-1259e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:294966540446:android:b6953ed737510272",
+        "mobilesdk_app_id": "1:224923572874:android:b6953ed737510272",
         "android_client_info": {
           "package_name": "com.example.smartrestro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "294966540446-b20kcr7tpr6lv04fiojnhm0oblkqhoc1.apps.googleusercontent.com",
+          "client_id": "224923572874-1iuoa950ner4phmkmjasaf99ntf3cfci.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.smartrestro",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "294966540446-40k95rg63eflist37it6oc212fs5h6or.apps.googleusercontent.com",
+          "client_id": "224923572874-4a35hcjfbh5cjdgfob8cnr364ss05ip0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA9F14biazh-WXKqhhYfdkX_eXQFtQzM7w"
+          "current_key": "AIzaSyD9hlMgo9PxpkGH6fbzP-_ureUllOd-Qo0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "294966540446-40k95rg63eflist37it6oc212fs5h6or.apps.googleusercontent.com",
+              "client_id": "224923572874-4a35hcjfbh5cjdgfob8cnr364ss05ip0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
