@@ -4,37 +4,75 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    // Write a message to the database
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    public EditText email,password;
+    Button btnLogin;
+    FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myRef.setValue("https://smart-restro-232a3.firebaseio.com/");
+        firebaseAuth = FirebaseAuth.getInstance();
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
+        btnLogin = findViewById(R.id.buttonLogin);
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Toast.makeText(MainActivity.this, "User logged in ", Toast.LENGTH_SHORT).show();
+                    Intent I = new Intent(MainActivity.this, NavigationActivity.class);
+                    startActivity(I);
+                } else {
+                    Toast.makeText(MainActivity.this, "Login to continue", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String emailId = email.getText().toString();
+                String pass = password.getText().toString();
+                if (emailId.isEmpty()) {
+                    email.setError("Provide your Email first!");
+                    email.requestFocus();
+                } else if (pass.isEmpty()) {
+                    password.setError("Enter Password!");
+                    password.requestFocus();
+                } else if (emailId.isEmpty() && pass.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
+                } else if (!(emailId.isEmpty() && pass.isEmpty())) {
+                    firebaseAuth.signInWithEmailAndPassword(emailId, pass).addOnCompleteListener(MainActivity.this, new OnCompleteListener() {
+                        @Override
+                        public void onComplete(@NonNull Task task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, "Not sucessfull", Toast.LENGTH_SHORT).show();
+                            } else {
+                                startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
-        public void getLogin (View v){
-            Intent intent = new Intent(this, NavigationActivity.class);
-            startActivity(intent);
-        }
-        public void getRegister (View v){
-            Intent intent = new Intent(this, RegistrationActivity.class);
-            startActivity(intent);
-        }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(authStateListener);
+    }
 }
