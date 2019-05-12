@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,19 +68,20 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Home",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_promotions) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Promotion",Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_search) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Search",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_menus) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Menus",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_myOrder) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"My Order",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Share",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_send) {
-            return true;
+            Toast.makeText(NavigationActivity.this,"Send",Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
