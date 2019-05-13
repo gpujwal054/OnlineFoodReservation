@@ -12,26 +12,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PaymentActivity"
-                  android:label="Payment"></activity>
+        <activity
+            android:name=".MyAccountActivity"
+            android:label="@string/title_activity_my_account"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="@string/title_activity_about_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShippingPaymentActivity"
+            android:label="@string/title_activity_shipping_payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyDetailsActivity"
+            android:label="@string/title_activity_my_details"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyOrderActivity"
-            android:label="My Order" />
+            android:label="@string/title_activity_my_order"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PromotionActivity"
-            android:label="Promotion" />
+            android:label="@string/title_activity_promotion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegistrationActivity"
-            android:label="@string/registration" />
-        <activity
-            android:name=".NavigationActivity"
-            android:label="@string/title_activity_navigation"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.smartrestro.MainActivity" />
-        </activity>
+            android:label="Registration" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

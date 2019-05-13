@@ -1,25 +1,44 @@
 package com.example.smartrestro;
 
+import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import android.view.View;
+
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.Menu;
-import android.widget.Toast;
 
-public class NavigationActivity extends AppCompatActivity
+import android.view.Menu;
+
+public class ShippingPaymentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
+        setContentView(R.layout.activity_shipping_payment);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,7 +61,7 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation, menu);
+        getMenuInflater().inflate(R.menu.shipping_payment, menu);
         return true;
     }
 
@@ -68,20 +87,29 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Toast.makeText(NavigationActivity.this,"Home",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_promotions) {
-            Toast.makeText(NavigationActivity.this,"Promotion",Toast.LENGTH_SHORT).show();
-
-        } else if (id == R.id.nav_search) {
-            Toast.makeText(NavigationActivity.this,"Search",Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(ShippingPaymentActivity.this,HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_promotion) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,PromotionActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_menus) {
-            Toast.makeText(NavigationActivity.this,"Menus",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_myOrder) {
-            Toast.makeText(NavigationActivity.this,"My Order",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_share) {
-            Toast.makeText(NavigationActivity.this,"Share",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_send) {
-            Toast.makeText(NavigationActivity.this,"Send",Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(ShippingPaymentActivity.this,MenuActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_order) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,MyOrderActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_myAccount) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,MyAccountActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_myDetails) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,MyDetailsActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_shipping) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,ShippingPaymentActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_aboutUs) {
+            Intent intent=new Intent(ShippingPaymentActivity.this,AboutUsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

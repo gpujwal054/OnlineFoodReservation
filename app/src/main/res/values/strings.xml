@@ -25,4 +25,11 @@
     <string name="registration">Registration</string>
     <string name="minimum_password">minimum password</string>
     <string name="auth_failed">auth failed</string>
+    <string name="title_activity_promotion">Promotions</string>
+    <string name="title_activity_menu">Menus</string>
+    <string name="title_activity_my_order">My Order</string>
+    <string name="title_activity_my_details">My Details</string>
+    <string name="title_activity_shipping_payment">Shipping and Payment</string>
+    <string name="title_activity_about_us">About Us</string>
+    <string name="title_activity_my_account">My Account</string>
 </resources>

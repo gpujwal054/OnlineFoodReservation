@@ -22,13 +22,13 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class MyOrderActivity extends AppCompatActivity
+public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_order);
+        setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -61,7 +61,7 @@ public class MyOrderActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my_order, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -87,28 +87,28 @@ public class MyOrderActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent intent=new Intent(MyOrderActivity.this,HomeActivity.class);
+            Intent intent=new Intent(MenuActivity.this,HomeActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_promotion) {
-            Intent intent=new Intent(MyOrderActivity.this,PromotionActivity.class);
+            Intent intent=new Intent(MenuActivity.this,PromotionActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_menus) {
-            Intent intent=new Intent(MyOrderActivity.this,MenuActivity.class);
+            Intent intent=new Intent(MenuActivity.this,MenuActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_order) {
-            Intent intent=new Intent(MyOrderActivity.this,MyOrderActivity.class);
+            Intent intent=new Intent(MenuActivity.this,MyOrderActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_myAccount) {
-            Intent intent=new Intent(MyOrderActivity.this,MyAccountActivity.class);
+            Intent intent=new Intent(MenuActivity.this,MyAccountActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_myDetails) {
-            Intent intent=new Intent(MyOrderActivity.this,MyDetailsActivity.class);
+            Intent intent=new Intent(MenuActivity.this,MyDetailsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_shipping) {
-            Intent intent=new Intent(MyOrderActivity.this,ShippingPaymentActivity.class);
+            Intent intent=new Intent(MenuActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
-            Intent intent=new Intent(MyOrderActivity.this,AboutUsActivity.class);
+            Intent intent=new Intent(MenuActivity.this,AboutUsActivity.class);
             startActivity(intent);
         }
 
