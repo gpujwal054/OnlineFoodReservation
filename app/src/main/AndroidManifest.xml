@@ -13,9 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".BookTableActivity"
+            android:label="@string/title_activity_book_table"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".MyAccountActivity"
             android:label="@string/title_activity_my_account"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_about_us"

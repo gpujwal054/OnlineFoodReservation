@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -14,8 +16,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    public EditText email,password;
+    EditText email,password;
     Button btnLogin,btnRegister;
+    TextView frgtPass;
     FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.buttonLogin);
         btnRegister = findViewById(R.id.buttonRegister);
+        frgtPass = findViewById(R.id.textViewFogPass);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -75,6 +79,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent I = new Intent(MainActivity.this, RegistrationActivity.class);
                 startActivity(I);
+            }
+        });
+        frgtPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String emailId = email.getText().toString();
+
+                if(TextUtils.isEmpty(emailId)){
+                    Toast.makeText(getApplicationContext(),"Please fill e-mail",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                firebaseAuth.sendPasswordResetEmail(emailId)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(getApplicationContext(),"Password reset link was sent your email address",Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(),"Mail sending error",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
     }

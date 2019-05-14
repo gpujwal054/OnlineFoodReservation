@@ -2,43 +2,31 @@ package com.example.smartrestro;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.View;
-
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 public class MyAccountActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView logOut;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
+        firebaseAuth = FirebaseAuth.getInstance();
+        logOut = findViewById(R.id.textViewLogOut);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -46,6 +34,15 @@ public class MyAccountActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
+
     }
 
     @Override
