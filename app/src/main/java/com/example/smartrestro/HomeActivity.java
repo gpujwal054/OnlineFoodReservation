@@ -6,17 +6,21 @@ import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        firebaseAuth = FirebaseAuth.getInstance();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -38,6 +42,15 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(HomeActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,7 +69,6 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.app_bar_search) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,12 +96,18 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_myDetails) {
             Intent intent=new Intent(HomeActivity.this,MyDetailsActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_bookTable) {
+            Intent intent=new Intent(HomeActivity.this,BookTableActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(HomeActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(HomeActivity.this,AboutUsActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_logOut) {
+            logout();
+            return true;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
