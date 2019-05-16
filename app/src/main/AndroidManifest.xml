@@ -15,7 +15,7 @@
         <activity
             android:name=".BookTableActivity"
             android:label="@string/title_activity_book_table"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyAccountActivity"
             android:label="@string/title_activity_my_account"
