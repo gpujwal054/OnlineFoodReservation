@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText email,password;
     Button btnLogin,btnRegister;
     TextView frgtPass;
+    private ProgressBar progressbar;
     FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.buttonLogin);
         btnRegister = findViewById(R.id.buttonRegister);
+        progressbar = findViewById(R.id.progressBar);
+        progressbar.setVisibility(View.GONE);
         frgtPass = findViewById(R.id.textViewFogPass);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,9 +64,11 @@ public class MainActivity extends AppCompatActivity {
                 } else if (emailId.isEmpty() && pass.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Fields Empty!", Toast.LENGTH_SHORT).show();
                 } else if (!(emailId.isEmpty() && pass.isEmpty())) {
+                    progressbar.setVisibility(View.VISIBLE);
                     firebaseAuth.signInWithEmailAndPassword(emailId, pass).addOnCompleteListener(MainActivity.this, new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
+                            progressbar.setVisibility(View.GONE);
                             if (!task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Not Successful", Toast.LENGTH_SHORT).show();
                             } else {
