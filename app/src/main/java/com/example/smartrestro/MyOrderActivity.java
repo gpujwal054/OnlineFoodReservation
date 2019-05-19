@@ -45,7 +45,7 @@ public class MyOrderActivity extends AppCompatActivity
     private void logout() {
         FirebaseAuth.getInstance().signOut();
         Toast.makeText(MyOrderActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MyOrderActivity.this, MainActivity.class);
+        Intent intent = new Intent(MyOrderActivity.this, IndexActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
