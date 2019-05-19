@@ -45,7 +45,7 @@ public class ShippingPaymentActivity extends AppCompatActivity
     private void logout() {
         FirebaseAuth.getInstance().signOut();
         Toast.makeText(ShippingPaymentActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(ShippingPaymentActivity.this, MainActivity.class);
+        Intent intent = new Intent(ShippingPaymentActivity.this, IndexActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
