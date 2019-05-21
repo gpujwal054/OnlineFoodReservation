@@ -103,6 +103,9 @@ public class MenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(MenuActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_location) {
+            Intent intent=new Intent(MenuActivity.this,MapActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(MenuActivity.this,AboutUsActivity.class);
             startActivity(intent);

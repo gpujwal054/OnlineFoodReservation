@@ -103,6 +103,9 @@ public class MyDetailsActivity extends AppCompatActivity
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(MyDetailsActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_location) {
+            Intent intent=new Intent(MyDetailsActivity.this,MapActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(MyDetailsActivity.this,AboutUsActivity.class);
             startActivity(intent);
