@@ -1,26 +1,82 @@
 package com.example.smartrestro;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
 import android.widget.Toast;
 
 public class BookTableActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
-
+    PageAdapter pageAdapter;
+    TabLayout tablayout;
+    TabItem tabfirst,tabsecond,tabbalcony,tabgarden;
+    ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_table);
+        tablayout = findViewById(R.id.tabLayout);
+        tabfirst = findViewById(R.id.tabItemFirst);
+        tabsecond = findViewById(R.id.tabItemSecond);
+        tabbalcony = findViewById(R.id.tabItemBalcony);
+        tabgarden = findViewById(R.id.tabItemGarden);
+        viewPager = findViewById(R.id.viewPager);
+        pageAdapter = new PageAdapter(getSupportFragmentManager(),tablayout.getTabCount());
+        viewPager.setAdapter(pageAdapter);
+        tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 1){
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    }
+                } else if (tab.getPosition() == 2){
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    }
+                } else if (tab.getPosition() == 3){
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    }
+                } else {
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    }
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
         firebaseAuth = FirebaseAuth.getInstance();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
