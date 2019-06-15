@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     EditText email,password;
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     TextView frgtPass;
     private ProgressBar progressbar;
     FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +34,6 @@ public class MainActivity extends AppCompatActivity {
         progressbar = findViewById(R.id.progressBar);
         progressbar.setVisibility(View.GONE);
         frgtPass = findViewById(R.id.textViewFogPass);
-        authStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Toast.makeText(MainActivity.this, "User logged In ", Toast.LENGTH_SHORT).show();
-                    Intent I = new Intent(MainActivity.this, HomeActivity.class);
-                    startActivity(I);
-                } else {
-                    Toast.makeText(MainActivity.this, "Login to continue", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             progressbar.setVisibility(View.GONE);
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "Not Successful", Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                if (firebaseAuth.getCurrentUser().isEmailVerified()){
+                                    startActivity(new Intent(MainActivity.this,HomeActivity.class));
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Please verify your email address", Toast.LENGTH_LONG).show();
+                                }
                             } else {
                                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             }
@@ -116,6 +105,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        firebaseAuth.addAuthStateListener(authStateListener);
     }
 }
