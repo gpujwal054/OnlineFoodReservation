@@ -209,9 +209,17 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                         public void onComplete(@NonNull Task<Void> task) {
                             progressbar.setVisibility(View.GONE);
                             if (task.isSuccessful()){
-                                Toast.makeText(RegistrationActivity.this,"Registration successful", Toast.LENGTH_LONG).show();
-                            } else {
-                                // Display error message
+                                firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            Toast.makeText(RegistrationActivity.this,"Registration successful. Please verify your email address.", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(RegistrationActivity.this,MainActivity.class));
+                                        } else{
+                                            Toast.makeText(RegistrationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
                             }
                         }
                     });
