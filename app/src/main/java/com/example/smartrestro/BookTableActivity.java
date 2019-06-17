@@ -17,15 +17,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class BookTableActivity extends AppCompatActivity
+public class
+
+BookTableActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
     PageAdapter pageAdapter;
     TabLayout tablayout;
     TabItem tabfirst,tabsecond,tabbalcony,tabgarden;
     ViewPager viewPager;
+    ImageButton buttonTable;
+    TextView txtView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +81,14 @@ public class BookTableActivity extends AppCompatActivity
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+        buttonTable = findViewById(R.id.buttonTable1);
+        buttonTable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I = new Intent(BookTableActivity.this, MenuActivity.class);
+                startActivity(I);
             }
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
