@@ -11,17 +11,36 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MyAccountActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    Button btnUpdateMyAcc,btnOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
         firebaseAuth = FirebaseAuth.getInstance();
+        btnUpdateMyAcc = findViewById(R.id.btnUpdateMyAccount);
+        btnOrder = findViewById(R.id.btnMyOrder);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        btnUpdateMyAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I = new Intent(MyAccountActivity.this, UpdateAccountActivity.class);
+                startActivity(I);
+            }
+        });
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(MyAccountActivity.this, MyOrderActivity.class);
+                startActivity(I);
+            }
+        });
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

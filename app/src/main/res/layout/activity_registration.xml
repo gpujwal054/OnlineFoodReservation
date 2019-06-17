@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity">
 
     <ImageView
         android:id="@+id/imgView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="155dp"
+        android:layout_height="123dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="42dp"
         android:contentDescription="User Image"
@@ -84,12 +83,14 @@
                 android:id="@+id/btnChoose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#979C27B0"
                 android:text="Choose your Image" />
 
             <Button
                 android:id="@+id/btnUpload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#00BCD4"
                 android:text="Upload Image File"
                 android:textColor="@android:color/primary_text_light_nodisable"
                 android:textSize="18sp" />
@@ -98,6 +99,7 @@
                 android:id="@+id/buttonRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#A4B4345F"
                 android:text="Register"
                 android:textColor="@android:color/primary_text_light_nodisable" />
 
