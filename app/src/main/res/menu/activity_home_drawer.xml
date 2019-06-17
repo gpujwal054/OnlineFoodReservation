@@ -33,6 +33,10 @@
             android:icon="@drawable/table"
             android:title="Book Table" />
         <item
+            android:id="@+id/nav_onlineBookTable"
+            android:icon="@drawable/table"
+            android:title=" Online Table Booking" />
+        <item
             android:id="@+id/nav_shipping"
             android:icon="@drawable/payment"
             android:title="Shipping and Payment" />

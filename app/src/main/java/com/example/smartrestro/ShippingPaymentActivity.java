@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
+import android.util.Log;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -11,16 +13,64 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Toast;
+
+import java.util.HashMap;
+
+import khalti.checkOut.api.Config;
+import khalti.checkOut.api.OnCheckOutListener;
+import khalti.checkOut.helper.KhaltiCheckOut;
+import khalti.widget.KhaltiButton;
 
 public class ShippingPaymentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    //KhaltiButton khaltiButton;
+    //KhaltiCheckOut khaltiCheckOut;
+    //Config config;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shipping_payment);
         firebaseAuth = FirebaseAuth.getInstance();
+        //khaltiButton = findViewById(R.id.khalti_button);
+        //khaltiButton.setCheckOutConfig(config);
+        /*config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, new OnCheckOutListener() {
+
+            @Override
+            public void onSuccess(HashMap<String, Object> data) {
+                Log.i("Payment confirmed", data+"");
+            }
+
+            @Override
+            public void onError(String action, String message) {
+                Log.i(action, message);
+            }
+        });
+        HashMap<String, String> map = new HashMap<>();
+        map.put("merchant_extra", "This is extra data");
+
+        config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, map, new OnCheckOutListener() {
+
+            @Override
+            public void onSuccess(HashMap<String, Object> data) {
+                Log.i("Payment confirmed", data);
+            }
+
+            @Override
+            public void onError(String action, String message) {
+                Log.i(action, message);
+            }
+        });
+
+        khaltiCheckOut = new KhaltiCheckOut(this, config);
+        khaltiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                khaltiCheckOut.show();
+            }
+        });*/
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

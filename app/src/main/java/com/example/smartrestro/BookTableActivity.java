@@ -44,24 +44,24 @@ public class BookTableActivity extends AppCompatActivity
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
                 if (tab.getPosition() == 1){
-                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.crimson));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.maroon));
                     }
                 } else if (tab.getPosition() == 2){
-                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorPrimaryDark));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.fuchsia));
                     }
                 } else if (tab.getPosition() == 3){
-                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.purple));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.olive));
                     }
                 } else {
-                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                    tablayout.setBackgroundColor(ContextCompat.getColor(BookTableActivity.this,R.color.green));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.colorAccent));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(BookTableActivity.this,R.color.aqua));
                     }
                 }
             }
