@@ -2,6 +2,7 @@ package com.example.smartrestro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,11 +28,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
 import java.io.IOException;
-import java.util.Objects;
 import java.util.UUID;
 
-public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
+public class UpdateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText name, email, password, address, phone;
     private ProgressBar progressbar;
     private FirebaseAuth firebaseAuth;
@@ -44,7 +46,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_update_account);
         firebaseAuth = firebaseAuth.getInstance();
         name = findViewById(R.id.editTextName);
         email = findViewById(R.id.editTextEmail);
@@ -68,6 +70,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             }
 
         });
+
         mUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +78,6 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
-
 
     private void chooseImage(){
         Intent intent = new Intent();
@@ -116,14 +118,14 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
-                            Toast.makeText(RegistrationActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UpdateAccountActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            Toast.makeText(RegistrationActivity.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UpdateAccountActivity.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -198,34 +200,25 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
-
         progressbar.setVisibility(View.VISIBLE);
         firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User<String> user = new User(username,user_email,user_address,user_contact);
-                    FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    User user = new User(username,user_email,user_address,user_contact);
+                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             progressbar.setVisibility(View.GONE);
                             if (task.isSuccessful()){
-                                firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()){
-                                            Toast.makeText(RegistrationActivity.this,"Registration successful. Please verify your email address.", Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(RegistrationActivity.this,MainActivity.class));
-                                        } else{
-                                            Toast.makeText(RegistrationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                });
+                                Toast.makeText(UpdateAccountActivity.this,"Account update successful", Toast.LENGTH_LONG).show();
+                            } else {
+                                // Display error message
                             }
                         }
                     });
                 } else {
-                    Toast.makeText(RegistrationActivity.this,"Registration failure", Toast.LENGTH_LONG).show();
+                    Toast.makeText(UpdateAccountActivity.this,"Account update failure", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -233,9 +226,11 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.buttonRegister:
+            case R.id.buttonUpdate:
                 registerUser();
                 break;
         }
     }
+
+
 }

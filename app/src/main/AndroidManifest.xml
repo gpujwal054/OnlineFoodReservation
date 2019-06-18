@@ -19,10 +19,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+        <activity android:name=".UpdateAccountActivity"></activity>
+=======
         <activity
             android:name=".OnlineBookActivity"
             android:label="@string/title_activity_online_book"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+>>>>>>> b1517c17e849a536dbd69d9a7cf587049454f1f6
         <!--
              The API key for Google MapActivity-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
