@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity
         mPager.setAdapter(new SlidingImage_Adapter(HomeActivity.this,ImagesArray));
 
 
-//Set circle indicator radius
+    //Set circle indicator radius
 
         NUM_PAGES =IMAGES.length;
 
