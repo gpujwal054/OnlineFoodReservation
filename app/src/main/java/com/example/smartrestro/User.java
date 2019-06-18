@@ -1,7 +1,7 @@
 package com.example.smartrestro;
 
 
-public class User {
+public class User<String> {
     public String name, email, address, contact;
 
     public User(String name,String email,String address, String contact){
