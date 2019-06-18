@@ -27,6 +27,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
@@ -203,8 +204,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(username,user_email,user_address,user_contact);
-                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    User<String> user = new User(username,user_email,user_address,user_contact);
+                    FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             progressbar.setVisibility(View.GONE);
