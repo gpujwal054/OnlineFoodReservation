@@ -1,25 +1,82 @@
 package com.example.smartrestro;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
 import android.view.Menu;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    MenuAdapter menuAdapter;
+    TabLayout tabLayout;
+    TabItem tabfood,tabdessert,tabcafe,tabbar;
+    ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        tabLayout = findViewById(R.id.tabLayout);
+        tabfood = findViewById(R.id.tabItemFood);
+        tabdessert = findViewById(R.id.tabItemDessert);
+        tabcafe = findViewById(R.id.tabItemCafe);
+        tabbar = findViewById(R.id.tabItemBar);
+        viewPager = findViewById(R.id.viewPager);
+        menuAdapter = new MenuAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(menuAdapter);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 1){
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MenuActivity.this,R.color.crimson));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,R.color.maroon));
+                    }
+                } else if (tab.getPosition() == 2){
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MenuActivity.this,R.color.colorPrimaryDark));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,R.color.fuchsia));
+                    }
+                } else if (tab.getPosition() == 3){
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MenuActivity.this,R.color.purple));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,R.color.olive));
+                    }
+                } else {
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MenuActivity.this,R.color.green));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MenuActivity.this,R.color.aqua));
+                    }
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         firebaseAuth = FirebaseAuth.getInstance();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

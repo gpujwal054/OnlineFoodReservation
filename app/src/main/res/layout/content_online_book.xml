@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".OnlineBookActivity"
+    tools:showIn="@layout/app_bar_online_book">
+
+    <TextView
+        android:id="@+id/tVtableName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name of table"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eTtableName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVtableName" />
+
+    <TextView
+        android:id="@+id/tVCheckInD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check In Date"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTtableName" />
+
+    <EditText
+        android:id="@+id/eTCheckInD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCheckInD" />
+
+    <TextView
+        android:id="@+id/tVCheckInT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check In Time"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCheckInD" />
+
+    <EditText
+        android:id="@+id/eTCheckInT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCheckInT" />
+
+    <TextView
+        android:id="@+id/tVCheckOutD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Out Date"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCheckInT" />
+
+    <EditText
+        android:id="@+id/eTCheckOutD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCheckOutD" />
+
+    <TextView
+        android:id="@+id/tVCheckOutT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Out Time"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCheckOutD" />
+
+    <EditText
+        android:id="@+id/eTCheckOutT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCheckOutT" />
+
+    <Button
+        android:id="@+id/btnBookNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Book Now"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCheckOutT" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVCheckOutT" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

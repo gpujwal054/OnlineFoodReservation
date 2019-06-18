@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".HomeActivity">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
 
+<<<<<<< HEAD
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="442dp"
@@ -18,3 +23,13 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/smart" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+</LinearLayout>
+>>>>>>> b1517c17e849a536dbd69d9a7cf587049454f1f6
