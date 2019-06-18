@@ -8,4 +8,14 @@
     tools:context=".ShippingPaymentActivity"
     tools:showIn="@layout/app_bar_shipping_payment">
 
+    <khalti.widget.KhaltiButton
+        android:id="@+id/khalti_button"
+        android:layout_width="176dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

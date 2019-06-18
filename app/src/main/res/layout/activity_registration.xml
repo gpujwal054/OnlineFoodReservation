@@ -83,7 +83,11 @@
                 android:id="@+id/btnChoose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:background="#979C27B0"
+=======
+
+>>>>>>> b1517c17e849a536dbd69d9a7cf587049454f1f6
                 android:text="Choose your Image" />
 
             <Button

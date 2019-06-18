@@ -13,6 +13,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -20,24 +23,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 
 public class OnlineBookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    EditText tableName,checkInDate,checkInTime,checkOutDate,checkOutTime;
+    ProgressBar progressbar;
+    FirebaseAuth firebaseAuth;
+    StorageReference mStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_book);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        tableName = findViewById(R.id.eTtableName);
+        checkInDate = findViewById(R.id.eTCheckInD);
+        checkInTime = findViewById(R.id.eTCheckInT);
+        checkOutDate = findViewById(R.id.eTCheckOutD);
+        checkOutTime = findViewById(R.id.eTCheckOutT);
+        progressbar = findViewById(R.id.progressBar);
+        mStorage = FirebaseStorage.getInstance().getReference();
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -103,4 +112,6 @@ public class OnlineBookActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

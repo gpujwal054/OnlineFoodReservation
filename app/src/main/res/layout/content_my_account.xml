@@ -28,6 +28,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:orientation="vertical">
 
             <TextView
@@ -86,4 +87,20 @@
         </LinearLayout>
     </ScrollView>
 
+=======
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email" />
+    </LinearLayout>
+>>>>>>> b1517c17e849a536dbd69d9a7cf587049454f1f6
 </androidx.constraintlayout.widget.ConstraintLayout>

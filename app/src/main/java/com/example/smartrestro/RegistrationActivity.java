@@ -12,7 +12,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -27,7 +26,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.io.IOException;
 import java.util.UUID;
 
@@ -69,7 +67,6 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             }
 
         });
-
         mUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +74,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
+
 
     private void chooseImage(){
         Intent intent = new Intent();
@@ -199,6 +197,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             return;
         }
 
+
         progressbar.setVisibility(View.VISIBLE);
         firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -210,9 +209,17 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                         public void onComplete(@NonNull Task<Void> task) {
                             progressbar.setVisibility(View.GONE);
                             if (task.isSuccessful()){
-                                Toast.makeText(RegistrationActivity.this,"Registration successful", Toast.LENGTH_LONG).show();
-                            } else {
-                                // Display error message
+                                firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            Toast.makeText(RegistrationActivity.this,"Registration successful. Please verify your email address.", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(RegistrationActivity.this,MainActivity.class));
+                                        } else{
+                                            Toast.makeText(RegistrationActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
                             }
                         }
                     });
