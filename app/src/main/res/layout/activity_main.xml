@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@android:color/holo_orange_dark"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -12,14 +11,13 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
+        android:background="@drawable/logo"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -52,7 +50,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:drawableLeft="@drawable/ic_email_black_24dp"
         android:ems="10"
         android:hint="@string/enter_your_email"
         android:inputType="textEmailAddress"
@@ -82,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:ems="10"
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
@@ -122,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tableReserved"
         android:layout_width="290dp"
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
@@ -146,6 +142,6 @@
         android:text="Register your account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tableReserved" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

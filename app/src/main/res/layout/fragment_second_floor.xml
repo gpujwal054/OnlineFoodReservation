@@ -22,7 +22,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/buttonTable1"
+            android:id="@+id/btnTableActive"
             android:layout_width="116dp"
             android:layout_height="94dp"
             android:layout_marginStart="8dp"
@@ -39,7 +39,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="80dp"
             android:text="table2"
-            app:layout_constraintStart_toEndOf="@+id/buttonTable1"
+            app:layout_constraintStart_toEndOf="@+id/btnTableActive"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -62,7 +62,7 @@
             android:layout_marginTop="32dp"
             android:text="table4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonTable1" />
+            app:layout_constraintTop_toBottomOf="@+id/btnTableActive" />
 
         <Button
             android:id="@+id/buttonTable5"

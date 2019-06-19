@@ -39,7 +39,6 @@
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
                 android:ems="10"
                 android:hint="@string/enter_your_name"
                 android:inputType="textPersonName" />
@@ -48,7 +47,6 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:ems="10"
                 android:hint="@string/enter_your_email"
                 android:inputType="textEmailAddress" />
@@ -57,7 +55,6 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:ems="10"
                 android:hint="@string/enter_your_password"
                 android:inputType="textPassword" />
@@ -66,7 +63,6 @@
                 android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_location_city_black_24dp"
                 android:ems="10"
                 android:hint="@string/enter_your_address"
                 android:inputType="textPersonName" />
@@ -75,7 +71,6 @@
                 android:id="@+id/editTextContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_phone_black_24dp"
                 android:ems="10"
                 android:hint="@string/enter_your_contact"
                 android:inputType="phone" />
@@ -116,5 +111,4 @@
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

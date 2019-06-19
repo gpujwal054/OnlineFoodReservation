@@ -22,9 +22,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class
-
-BookTableActivity extends AppCompatActivity
+public class BookTableActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
     PageAdapter pageAdapter;
@@ -32,7 +30,7 @@ BookTableActivity extends AppCompatActivity
     TabItem tabfirst,tabsecond,tabbalcony,tabgarden;
     ViewPager viewPager;
     ImageButton buttonTable;
-    TextView txtView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +81,7 @@ BookTableActivity extends AppCompatActivity
 
             }
         });
-        buttonTable = findViewById(R.id.buttonTable1);
+        buttonTable = findViewById(R.id.btnTableActive);
         buttonTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

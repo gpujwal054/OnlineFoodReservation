@@ -23,11 +23,17 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyAccountActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    DatabaseReference databaseReference;
+    ImageView userProfile;
+    TextView userName, userAddress, userEmail;
     Button btnUpdateMyAcc,btnOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,28 @@ public class MyAccountActivity extends AppCompatActivity
                 startActivity(I);
             }
         });
+
+        userName = findViewById(R.id.userName);
+        userAddress = findViewById(R.id.userAddress);
+        userEmail = findViewById(R.id.userEmail);
+        userProfile = findViewById(R.id.imgViewUser);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                userName.setText(value);
+                userAddress.setText(value);
+                userEmail.setText(value);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
