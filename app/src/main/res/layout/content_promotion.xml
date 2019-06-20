@@ -9,9 +9,10 @@
 
     <ImageView
         android:id="@+id/restroWines"
-        android:layout_width="match_parent"
-        android:layout_height="262dp"
+        android:layout_width="407dp"
+        android:layout_height="201dp"
         android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         android:baselineAlignBottom="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,8 +22,8 @@
 
     <TextView
         android:id="@+id/textWines"
-        android:layout_width="417dp"
-        android:layout_height="58dp"
+        android:layout_width="407dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -36,8 +37,8 @@
 
     <ImageView
         android:id="@+id/restroDrinks"
-        android:layout_width="match_parent"
-        android:layout_height="221dp"
+        android:layout_width="407dp"
+        android:layout_height="201dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:baselineAlignBottom="true"
