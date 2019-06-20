@@ -43,4 +43,6 @@
     <string name="search">Search</string>
     <string name="search_location">Search location</string>
     <string name="send_email">Send Email</string>
+    <string name="e_mail_smartrestro_gmail_com">E-mail : smartrestro@gmail.com</string>
+    <string name="address_lakeside_pokhara">Address : Lakeside,Pokhara</string>
 </resources>
