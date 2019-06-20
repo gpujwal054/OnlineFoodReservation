@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,25 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        webView.setWebViewClient(new MyBrowser() );
+        WebSettings webSettings= webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setAppCacheEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        webSettings.setSaveFormData(true);
+        webView.loadUrl("file:///test/Sliding.html");
+
+
+
+    }
+    private  class MyBrowser extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
     }
 
     @Override
@@ -110,7 +133,7 @@ public class HomeActivity extends AppCompatActivity
             Intent intent=new Intent(HomeActivity.this,MapActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
-            Intent intent=new Intent(HomeActivity.this,AboutUsActivity.class);
+            Intent intent=new Intent(HomeActivity.this,TestFire.class);
             startActivity(intent);
         } else if (id == R.id.nav_logOut) {
             logout();

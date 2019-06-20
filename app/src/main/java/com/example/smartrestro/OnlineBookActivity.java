@@ -2,11 +2,6 @@ package com.example.smartrestro;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.View;
-
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -23,13 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
 public class OnlineBookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    EditText tableName,checkInDate,checkInTime,checkOutDate,checkOutTime;
+    EditText name,address,phoneN,checkInDate,checkOutDate,checkInTime,checkOutTime,numberOfPeople;
     ProgressBar progressbar;
     FirebaseAuth firebaseAuth;
     StorageReference mStorage;
@@ -39,11 +33,14 @@ public class OnlineBookActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_book);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        tableName = findViewById(R.id.eTtableName);
+         name = findViewById(R.id.eTName);
+         address=findViewById(R.id.eTAddress);
+         phoneN=findViewById(R.id.eTPhoneN);
         checkInDate = findViewById(R.id.eTCheckInD);
-        checkInTime = findViewById(R.id.eTCheckInT);
         checkOutDate = findViewById(R.id.eTCheckOutD);
+        checkInTime = findViewById(R.id.eTCheckInT);
         checkOutTime = findViewById(R.id.eTCheckOutT);
+        numberOfPeople=findViewById(R.id.eTNumberOfP);
         progressbar = findViewById(R.id.progressBar);
         mStorage = FirebaseStorage.getInstance().getReference();
         setSupportActionBar(toolbar);

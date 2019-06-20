@@ -18,8 +18,8 @@ TextView textView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_fire);
-    databaseReference = FirebaseDatabase.getInstance().getReference("Helloo");
-    textView = (TextView) findViewById(R.id.testfire);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Helloo");
+        textView = findViewById(R.id.testfire);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
