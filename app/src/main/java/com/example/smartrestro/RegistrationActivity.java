@@ -39,7 +39,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private static final int PICK_IMAGE_REQUEST = 25;
     Button mChoose,mUpload;
     ImageView mImageView;
-
+    String s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,13 +110,21 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            StorageReference ref = mStorage.child("images/"+ UUID.randomUUID().toString());
+            final StorageReference ref = mStorage.child("images/"+ UUID.randomUUID().toString());
             ref.putFile(filePath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
                             Toast.makeText(RegistrationActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                            ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    s= uri.toString().trim();
+                                    Toast.makeText(RegistrationActivity.this,s, Toast.LENGTH_LONG).show();
+                                }
+                            });
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -134,6 +142,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                             progressDialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
+
         }
     }
 
@@ -204,7 +213,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    User user = new User(username,user_email,user_address,user_contact);
+                    User user = new User(username,user_email,user_address,user_contact,s);
                     FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

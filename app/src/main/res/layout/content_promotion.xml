@@ -7,4 +7,59 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".PromotionActivity">
 
+    <ImageView
+        android:id="@+id/restroWines"
+        android:layout_width="407dp"
+        android:layout_height="201dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:baselineAlignBottom="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wines" />
+
+    <TextView
+        android:id="@+id/textWines"
+        android:layout_width="407dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text='"Free of bottle of wine.When you spend more than Rs 1000 on a menu."'
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restroWines" />
+
+    <ImageView
+        android:id="@+id/restroDrinks"
+        android:layout_width="407dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textWines"
+        app:srcCompat="@drawable/drinks" />
+
+    <TextView
+        android:id="@+id/textDrinks"
+        android:layout_width="407dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:layout_marginEnd="8dp"
+        android:text='"Free of bottle of drinks. When you spend more than Rs 500 on a menu."'
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restroDrinks" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
