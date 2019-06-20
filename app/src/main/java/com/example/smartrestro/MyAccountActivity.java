@@ -33,12 +33,71 @@ public class MyAccountActivity extends AppCompatActivity
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     ImageView userProfile;
-    TextView userName, userAddress, userEmail;
+    TextView name,address,email;
     Button btnUpdateMyAcc,btnOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
+        name = findViewById(R.id.userName);
+        address = findViewById(R.id.userAddress);
+        email = findViewById(R.id.userEmail);
+        userProfile = findViewById(R.id.imgViewUser);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    String uid = ds.getKey();
+                    DatabaseReference usersRef = databaseReference.child("Users").child(uid);
+                    ValueEventListener eventListener = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            User name = dataSnapshot.child("name").getValue(User.class);
+                            User address = dataSnapshot.child("address").getValue(User.class);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    };
+                    usersRef.addListenerForSingleValueEvent(eventListener);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        /*ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    String uid = ds.getKey();
+                    DatabaseReference usersRef = databaseReference.child("Users").child(uid);
+                    ValueEventListener eventListener = new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            User name = dataSnapshot.child("name").getValue(User.class);
+                            User address = dataSnapshot.child("address").getValue(User.class);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    };
+                    usersRef.addListenerForSingleValueEvent(eventListener);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };*/
         firebaseAuth = FirebaseAuth.getInstance();
         btnUpdateMyAcc = findViewById(R.id.btnUpdateMyAccount);
         btnOrder = findViewById(R.id.btnMyOrder);
@@ -57,28 +116,6 @@ public class MyAccountActivity extends AppCompatActivity
                 startActivity(I);
             }
         });
-
-        userName = findViewById(R.id.userName);
-        userAddress = findViewById(R.id.userAddress);
-        userEmail = findViewById(R.id.userEmail);
-        userProfile = findViewById(R.id.imgViewUser);
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                userName.setText(value);
-                userAddress.setText(value);
-                userEmail.setText(value);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
