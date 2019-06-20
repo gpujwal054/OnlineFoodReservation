@@ -47,7 +47,7 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_account);
-        firebaseAuth = firebaseAuth.getInstance();
+        /*firebaseAuth = firebaseAuth.getInstance();
         name = findViewById(R.id.editTextName);
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
@@ -77,9 +77,10 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
                 uploadImage();
             }
         });
+        */
     }
 
-    private void chooseImage(){
+    /*private void chooseImage(){
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -137,15 +138,20 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
                         }
                     });
         }
-    }
+    }*/
 
     @Override
     protected void onStart() {
         super.onStart();
-        if (firebaseAuth.getCurrentUser() != null) {
-        }
+        /*if (firebaseAuth.getCurrentUser() != null) {
+        }*/
     }
-    private void registerUser(){
+
+    @Override
+    public void onClick(View v) {
+
+    }
+    /*private void registerUser(){
         final String username = name.getText().toString().trim();
         final String user_email = email.getText().toString().trim();
         String user_password = password.getText().toString().trim();
@@ -230,7 +236,7 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
                 registerUser();
                 break;
         }
-    }
+    }*/
 
 
 }
