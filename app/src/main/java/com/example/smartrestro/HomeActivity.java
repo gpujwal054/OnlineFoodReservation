@@ -35,7 +35,8 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        webView.setWebViewClient(new MyBrowser() );
+        webView =(WebView) findViewById(R.id.social);
+        webView.setWebViewClient(new MyBrowser());
         WebSettings webSettings= webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
@@ -133,7 +134,7 @@ public class HomeActivity extends AppCompatActivity
             Intent intent=new Intent(HomeActivity.this,MapActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
-            Intent intent=new Intent(HomeActivity.this,TestFire.class);
+            Intent intent=new Intent(HomeActivity.this,AboutUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_logOut) {
             logout();
