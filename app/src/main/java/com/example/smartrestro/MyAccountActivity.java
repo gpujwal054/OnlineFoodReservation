@@ -66,8 +66,8 @@ public class MyAccountActivity extends AppCompatActivity
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 userName.setText("Name" + user.getName());
-                userEmail.setText("Email" + user.getEmail());
-                userAddress.setText("Address" + user.getAddress());
+                userAddress.setText("Email" + user.getEmail());
+                userEmail.setText("Address" + user.getAddress());
                 userContact.setText("Contact" + user.getContact());
             }
 
