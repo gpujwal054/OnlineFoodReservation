@@ -30,10 +30,10 @@
 
             <TextView
                 android:id="@+id/textWines"
-                android:layout_width="407dp"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="8dp"
                 android:background="#D3DDDADA"
                 android:gravity="center"
@@ -45,16 +45,16 @@
                 android:id="@+id/restroDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="201dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:adjustViewBounds="true"
                 android:baselineAlignBottom="true"
                 app:srcCompat="@drawable/drinks" />
 
             <TextView
                 android:id="@+id/textDrinks"
-                android:layout_width="407dp"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="10dp"
                 android:background="#D7FFFFFF"
                 android:gravity="center"
                 android:text='"Free of bottle of drinks. When you spend more than Rs 500 on a menu."'
