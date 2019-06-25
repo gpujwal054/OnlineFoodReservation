@@ -7,106 +7,161 @@
     tools:context=".UpdateAccountActivity">
 
 
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="155dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="42dp"
-        android:contentDescription="User Image"
-        app:layout_constraintBottom_toTopOf="@+id/scrollViewRegister"
+    <ScrollView
+        android:id="@+id/scrollViewRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintTop_toTopOf="parent">
 
-<ScrollView
-android:id="@+id/scrollViewRegister"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:layout_marginStart="8dp"
-android:layout_marginTop="150dp"
-android:layout_marginEnd="8dp"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+            <ImageView
+                android:id="@+id/newImgView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#BB1CE7"
+                android:contentDescription="User Image" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_your_name"
-        android:inputType="textPersonName" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_your_email"
-        android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/newEditTextName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/indianred"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:ems="10"
+                android:hint="Enter your name"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_your_password"
-        android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/newEditTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/indianred"
+                android:ems="10"
+                android:hint="@string/enter_your_email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editTextAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_your_address"
-        android:inputType="textPersonName" />
+            <!--<EditText
+                android:id="@+id/newEditTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/indianred"
+                android:ems="10"
+                android:hint="@string/enter_your_password"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="24sp" />-->
 
-    <EditText
-        android:id="@+id/editTextContact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_your_contact"
-        android:inputType="phone" />
+            <EditText
+                android:id="@+id/newEditTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ic_location_city_black_24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/indianred"
+                android:ems="10"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btnChoose"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#979C27B0"
-        android:text="Choose your Image" />
+            <EditText
+                android:id="@+id/newEditTextContact"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/indianred"
+                android:ems="10"
+                android:hint="@string/enter_your_contact"
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/btnUpload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00BCD4"
-        android:text="Upload Image File"
-        android:textColor="@android:color/primary_text_light_nodisable"
-        android:textSize="18sp" />
+            <!--<Button
+                android:id="@+id/btnNewChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_orange_light"
+                android:text="Choose your Image" />-->
 
-    <Button
-        android:id="@+id/buttonUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#A4B4345F"
-        android:text="Update Account"
-        android:textColor="@android:color/primary_text_light_nodisable" />
+            <Button
+                android:id="@+id/btnNewUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/holo_purple"
+                android:text="Upload Image File"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:textSize="18sp" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnUpdateMyAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="Update Account"
+                android:textColor="@android:color/primary_text_light_nodisable" />
 
-</LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
