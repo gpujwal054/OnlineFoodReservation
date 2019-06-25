@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/wood"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -13,12 +12,10 @@
         android:id="@+id/scrollViewMyAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +40,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:text="Name"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <TextView
@@ -54,7 +51,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:text="Address"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <TextView
@@ -65,7 +62,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:text="Email"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <TextView
@@ -76,8 +73,16 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:text="Phone No."
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="308dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Delete Account" />
 
             <Button
                 android:id="@+id/btnUpdateMyAccount"
@@ -85,7 +90,7 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="Update My Account" />
+                android:text="Update Account" />
 
             <Button
                 android:id="@+id/btnMyOrder"

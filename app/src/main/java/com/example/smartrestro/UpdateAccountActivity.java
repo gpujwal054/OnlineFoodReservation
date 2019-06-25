@@ -136,7 +136,7 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-        final DatabaseReference databaseReference = firebaseDatabase.getReference("Users");
+        final DatabaseReference databaseReference = firebaseDatabase.getReference();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
