@@ -8,30 +8,35 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".AboutUsActivity">
 
-    <ImageView
-        android:id="@+id/restroImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:background="#EEFFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/restaurant" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/restroImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:adjustViewBounds="true"
+                android:background="#EEFFFFFF"
+                app:srcCompat="@drawable/restaurant" />
 
             <TextView
                 android:id="@+id/restroMoto"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="260dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
                 android:background="#D800BCD4"
                 android:text='"We are a company of cooks.We passionately believe that restaurant quality food can be made in every setting and we are excited to share it with you!" '
                 android:textColor="#010102"
@@ -96,6 +101,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
                 android:background="#D1FFFFFF"
                 android:text="Closing hours:10pm"
                 android:textColor="@color/black"

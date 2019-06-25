@@ -29,14 +29,14 @@
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/burger" />
+                android:src="@drawable/Icetea" />
 
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BURGER" />
+                android:text="ICE TEA" />
 
             <ImageButton
                 android:id="@+id/imageButton8"
@@ -46,25 +46,25 @@
 
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/piza" />
+                android:src="@drawable/ORANGEJUICE" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PIZZA" />
+                android:text="ORANGE JUICE" />
 
 
 
 
 
 
-        android:id="@+id/textView3"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
-        tools:layout_editor_absoluteY="480dp" />
+            android:id="@+id/textView3"
+            android:layout_width="45dp"
+            android:layout_height="18dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/scrollView2"
+            tools:layout_editor_absoluteY="480dp" />
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -74,21 +74,21 @@
 
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/breakfast"
+                android:src="@drawable/STRAWBERRY"
                 tools:layout_editor_absoluteX="17dp"
                 tools:layout_editor_absoluteY="504dp" />
 
 
 
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BREAKFAST"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="695dp" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STRAWBERRY JUICE"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="695dp" />
+        </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

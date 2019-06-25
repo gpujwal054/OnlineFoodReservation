@@ -155,7 +155,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private void registerUser(){
         final String username = name.getText().toString().trim();
         final String user_email = email.getText().toString().trim();
-        String user_password = password.getText().toString().trim();
+        final String user_password = password.getText().toString().trim();
         final String user_address = address.getText().toString().trim();
         final String user_contact = phone.getText().toString().trim();
 

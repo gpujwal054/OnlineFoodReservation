@@ -19,7 +19,7 @@ public class MenuAdapter extends FragmentPagerAdapter {
             case 1:
                 return new DessertFragment();
             case 2:
-                return new CafeFragment();
+                return new DrinksFragment();
             case 3:
                 return new BarFragment();
                 default:

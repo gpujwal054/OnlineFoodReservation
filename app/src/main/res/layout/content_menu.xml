@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,19 +20,19 @@
             android:id="@+id/tabItemFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food" />
+            android:text="Drinks" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItemDessert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dessert" />
+            android:text="FOOD" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItemCafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cafe" />
+            android:text="DESSERT" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItemBar"
