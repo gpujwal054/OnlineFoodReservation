@@ -75,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            Toast.makeText(MainActivity.this, "User already logged in", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        }
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
