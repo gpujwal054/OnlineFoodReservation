@@ -1,5 +1,6 @@
 package com.example.smartrestro;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
@@ -18,12 +19,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class OnlineBookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    EditText name,address,phoneN,checkInDate,checkOutDate,checkInTime,checkOutTime,numberOfPeople;
+    TextView name,address,phoneN,checkInDate,checkOutDate,checkInTime,checkOutTime,numberOfPeople;
+    Button btnBookT;
     ProgressBar progressbar;
     FirebaseAuth firebaseAuth;
     StorageReference mStorage;
@@ -32,7 +37,6 @@ public class OnlineBookActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_book);
-        Toolbar toolbar = findViewById(R.id.toolbar);
          name = findViewById(R.id.eTName);
          address=findViewById(R.id.eTAddress);
          phoneN=findViewById(R.id.eTPhoneN);
@@ -42,16 +46,29 @@ public class OnlineBookActivity extends AppCompatActivity
         checkOutTime = findViewById(R.id.eTCheckOutT);
         numberOfPeople=findViewById(R.id.eTNumberOfP);
         progressbar = findViewById(R.id.progressBar);
-        mStorage = FirebaseStorage.getInstance().getReference();
+
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        btnBookT = findViewById(R.id.btnBookTable);
+        btnBookT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(OnlineBookActivity.this, MyOrderActivity.class);
+                startActivity(I);
+            }
+        });
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-    }
+        }
 
     @Override
     public void onBackPressed() {
