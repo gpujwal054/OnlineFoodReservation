@@ -98,9 +98,6 @@ public class AboutUsActivity extends AppCompatActivity
         } else if (id == R.id.nav_myAccount) {
             Intent intent=new Intent(AboutUsActivity.this,MyAccountActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myDetails) {
-            Intent intent=new Intent(AboutUsActivity.this,MyDetailsActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(AboutUsActivity.this,BookTableActivity.class);
             startActivity(intent);

@@ -24,7 +24,7 @@
             <ImageView
                 android:id="@+id/restroWines"
                 android:layout_width="match_parent"
-                android:layout_height="210"
+                android:layout_height="210dp"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/wines" />
 

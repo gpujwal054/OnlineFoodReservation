@@ -66,10 +66,6 @@
             android:label="@string/title_activity_shipping_payment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MyDetailsActivity"
-            android:label="@string/title_activity_my_details"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".MyOrderActivity"
             android:label="@string/title_activity_my_order"
             android:theme="@style/AppTheme.NoActionBar" />

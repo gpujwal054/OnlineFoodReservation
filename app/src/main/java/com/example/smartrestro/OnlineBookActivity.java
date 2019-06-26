@@ -1,10 +1,12 @@
 package com.example.smartrestro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class OnlineBookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -66,6 +69,15 @@ public class OnlineBookActivity extends AppCompatActivity
         }
     }
 
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(OnlineBookActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(OnlineBookActivity.this, IndexActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -95,17 +107,38 @@ public class OnlineBookActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            Intent intent=new Intent(OnlineBookActivity.this,HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_promotion) {
+            Intent intent=new Intent(OnlineBookActivity.this,PromotionActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_menus) {
+            Intent intent=new Intent(OnlineBookActivity.this,MenuActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_order) {
+            Intent intent=new Intent(OnlineBookActivity.this,MyOrderActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_myAccount) {
+            Intent intent=new Intent(OnlineBookActivity.this,MyAccountActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_bookTable) {
+            Intent intent=new Intent(OnlineBookActivity.this,BookTableActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_onlineBookTable) {
+            Intent intent=new Intent(OnlineBookActivity.this,OnlineBookActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_shipping) {
+            Intent intent=new Intent(OnlineBookActivity.this,ShippingPaymentActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_location) {
+            Intent intent=new Intent(OnlineBookActivity.this,MapActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_aboutUs) {
+            Intent intent=new Intent(OnlineBookActivity.this,AboutUsActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_logOut) {
+            logout();
+            return true;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

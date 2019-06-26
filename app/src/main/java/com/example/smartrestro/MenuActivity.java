@@ -151,9 +151,6 @@ public class MenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_myAccount) {
             Intent intent=new Intent(MenuActivity.this,MyAccountActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myDetails) {
-            Intent intent=new Intent(MenuActivity.this,MyDetailsActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(MenuActivity.this,BookTableActivity.class);
             startActivity(intent);
