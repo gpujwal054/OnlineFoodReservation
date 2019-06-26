@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="410dp"
@@ -12,204 +12,223 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tVName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Name"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24dp" />
 
             <EditText
                 android:id="@+id/eTName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:textColor="@color/navy"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/lightcoral"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Address"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="textPostalAddress"
-                android:textColor="@color/navy"
-                android:textSize="18sp" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/tVPhoneN"
+                android:id="@+id/tVContact"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Phone No."
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTPhoneN"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="phone"
-                android:textColor="@color/navy"
-                android:textSize="18sp" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckInD"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Check In Date"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED "
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckInD"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="date"
-                android:textColor="@color/navy" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckOutD"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Check Out Date"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckOutD"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="date"
-                android:textColor="@color/navy" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckInT"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Check In Time"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckInT"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="time"
-                android:textColor="@color/navy" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckOutT"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Check Out Time"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckOutT"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="time"
-                android:textColor="@color/navy" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+
 
             <TextView
                 android:id="@+id/tVNumberOfP"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Number of People"
-                android:textColor="#001AFF"
-                android:textSize="30sp" />
+                android:textColor="#F3EDED"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTNumberOfP"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="#8AFC157A"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="number"
-                android:textColor="@color/navy" />
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnBookTable"
-                android:layout_width="match_parent"
+                android:layout_width="378dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Book  Table "
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <ProgressBar
                 android:id="@+id/progressbar"
-                android:layout_width="399dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="10dp" />
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp" />
         </LinearLayout>
     </ScrollView>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

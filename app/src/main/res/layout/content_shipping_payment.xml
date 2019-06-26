@@ -4,18 +4,284 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/deliveryboy"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ShippingPaymentActivity"
     tools:showIn="@layout/app_bar_shipping_payment">
 
-    <khalti.widget.KhaltiButton
-        android:id="@+id/khalti_button"
-        android:layout_width="176dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tVDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Delivery Detail"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVName"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTName"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVAddress"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTAddress"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVContact"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Contact"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTPhoneN"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVDate"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTDate"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVTime"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTTime"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="time"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVPayment"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Payment Method"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+
+            <khalti.widget.KhaltiButton
+                android:id="@+id/khalti_button"
+                android:layout_width="308dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:text="khalti"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVOrder"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="Order Details"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVTotalP"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Total Products"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+
+            <EditText
+                android:id="@+id/eTTotalP"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Discount"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVShipping"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Shipping"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTShipping"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tVTotal"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Total "
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/eTTotal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#9FF7637A"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnCompleteOrder"
+                android:layout_width="308dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="COMPLETE ORDER"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/restroShipping"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:background="#D800BCD4"
+                android:text='"We will call you to confirm the order after your order are submitted!" '
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:autoSizeTextType="uniform" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

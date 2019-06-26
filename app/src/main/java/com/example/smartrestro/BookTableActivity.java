@@ -18,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,25 @@ public class BookTableActivity extends AppCompatActivity
     TabItem tabfirst,tabsecond,tabbalcony,tabgarden;
     ViewPager viewPager;
     ImageButton buttonTable;
+
+    int quantity = 0;
+    public void increment (View view) {
+        quantity = quantity + 1;
+        display(quantity);
+    }
+
+    public void decrement (View view) {
+        if (quantity > 0) {
+            quantity = quantity - 1;
+            display(quantity);
+        }
+    }
+
+    private void display(int quantity) {
+        EditText quantityText = findViewById(R.id.quantity_textview);
+        quantityText.setText("" + "0");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

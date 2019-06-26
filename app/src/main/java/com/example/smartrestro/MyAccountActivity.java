@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
-import android.util.Log;
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,39 +31,40 @@ import android.widget.Toast;
 public class MyAccountActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
-    DatabaseReference databaseReference;
-    ImageView userProfile;
-    TextView name,address,email;
-    Button btnUpdateMyAcc,btnOrder;
+    FirebaseStorage firebaseStorage;
+    FirebaseDatabase firebaseDatabase;
+    ImageView user;
+    TextView name,address,email,contact;
+    Button btnUpdateMyAcc,btnOrder,btnDeleteAcc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-        name = findViewById(R.id.userName);
-        address = findViewById(R.id.userAddress);
-        email = findViewById(R.id.userEmail);
-        userProfile = findViewById(R.id.imgViewUser);
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        user = findViewById(R.id.iVUser);
+        name = findViewById(R.id.tVName);
+        address = findViewById(R.id.tVAddress);
+        email = findViewById(R.id.tVEmail);
+        contact= findViewById(R.id.tVContact);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        //StorageReference storageReference = firebaseStorage.getReference();
+        /*storageReference.child(firebaseAuth.getUid()).child("images/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).fit().centerCrop().into(userProfile);
+            }
+        });*/
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()){
-                    String uid = ds.getKey();
-                    DatabaseReference usersRef = databaseReference.child("Users").child(uid);
-                    ValueEventListener eventListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            User name = dataSnapshot.child("name").getValue(User.class);
-                            User address = dataSnapshot.child("address").getValue(User.class);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    };
-                    usersRef.addListenerForSingleValueEvent(eventListener);
-                }
+                User user = dataSnapshot.getValue(User.class);
+                name.setText("Name" + user.getName());
+                address.setText("Email" + user.getEmail());
+                email.setText("Address" + user.getAddress());
+                contact.setText("Contact" + user.getContact());
             }
 
             @Override
@@ -71,35 +72,7 @@ public class MyAccountActivity extends AppCompatActivity
 
             }
         });
-        /*ValueEventListener eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()){
-                    String uid = ds.getKey();
-                    DatabaseReference usersRef = databaseReference.child("Users").child(uid);
-                    ValueEventListener eventListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            User name = dataSnapshot.child("name").getValue(User.class);
-                            User address = dataSnapshot.child("address").getValue(User.class);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    };
-                    usersRef.addListenerForSingleValueEvent(eventListener);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };*/
-        firebaseAuth = FirebaseAuth.getInstance();
-        btnUpdateMyAcc = findViewById(R.id.btnUpdateMyAccount);
+        btnUpdateMyAcc = findViewById(R.id.btnUpdateAccount);
         btnOrder = findViewById(R.id.btnMyOrder);
         Toolbar toolbar = findViewById(R.id.toolbar);
         btnUpdateMyAcc.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +85,14 @@ public class MyAccountActivity extends AppCompatActivity
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I=new Intent(MyAccountActivity.this, MyOrderActivity.class);
+                Intent I=new Intent(MyAccountActivity.this, UpdateAccountActivity.class);
+                startActivity(I);
+            }
+        });
+        btnDeleteAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(MyAccountActivity.this, UpdateAccountActivity.class);
                 startActivity(I);
             }
         });

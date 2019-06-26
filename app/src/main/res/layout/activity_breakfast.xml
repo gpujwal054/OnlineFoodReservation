@@ -93,7 +93,8 @@
                         android:layout_height="42dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginEnd="131dp"
-                        android:text="RS:450" />
+                        android:text="RS:450"
+                        tools:ignore="DuplicateIds" />
                 </LinearLayout>
 
                 <Button
@@ -104,7 +105,8 @@
                     android:layout_weight="1"
                     android:onClick="increment"
 
-                    android:text="+" />
+                    android:text="+"
+                    tools:ignore="DuplicateIds" />
 
                 <EditText
                     android:id="@+id/quantity_textview"
@@ -117,7 +119,8 @@
                     android:padding="15dp"
                     android:text="0"
                     android:textColor="@android:color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="DuplicateIds" />
 
                 <Button
                     android:id="@+id/btnDecrement"
@@ -125,7 +128,9 @@
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-" />
+                    android:onClick="decrement"
+                    android:text="-"
+                    tools:ignore="DuplicateIds" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,7 +141,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tVIndian"
+                        android:id="@+id/tVIndian1"
                         android:layout_width="129dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="20dp"
@@ -159,7 +164,8 @@
                     android:layout_weight="1"
                     android:onClick="increment"
 
-                    android:text="+" />
+                    android:text="+"
+                    tools:ignore="DuplicateIds" />
 
                 <EditText
                     android:id="@+id/quantity_textview"
@@ -172,7 +178,8 @@
                     android:padding="15dp"
                     android:text="0"
                     android:textColor="@android:color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="DuplicateIds" />
 
                 <Button
                     android:id="@+id/btnDecrement"
@@ -180,7 +187,10 @@
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-" />
+
+                    android:onClick="decrement"
+                    android:text="-"
+                    tools:ignore="DuplicateIds" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

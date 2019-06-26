@@ -2,90 +2,46 @@ package com.example.smartrestro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.io.IOException;
 import java.util.UUID;
 
 public class UpdateAccountActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText name, email, password, address, phone;
+
     private ProgressBar progressbar;
     private FirebaseAuth firebaseAuth;
     StorageReference mStorage;
-    private Uri filePath;
-    private static final int PICK_IMAGE_REQUEST = 25;
-    Button mChoose,mUpload;
-    ImageView mImageView;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_account);
-        /*firebaseAuth = firebaseAuth.getInstance();
-        name = findViewById(R.id.editTextName);
-        email = findViewById(R.id.editTextEmail);
-        password = findViewById(R.id.editTextPassword);
-        address = findViewById(R.id.editTextAddress);
-        phone = findViewById(R.id.editTextContact);
-        progressbar = findViewById(R.id.progressBar);
-        progressbar.setVisibility(View.GONE);
-        findViewById(R.id.buttonRegister).setOnClickListener(this);
-        mStorage = FirebaseStorage.getInstance().getReference();
-        mChoose = findViewById(R.id.btnChoose);
-        mUpload = findViewById(R.id.btnUpload);
-        mImageView = findViewById(R.id.imgView);
-        mImageView.buildDrawingCache();
-        mImageView.setDrawingCacheEnabled(true);
-        mImageView.buildDrawingCache();
-        mChoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                chooseImage();
-            }
-
-        });
-
-        mUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadImage();
-            }
-        });
-        */
-    }
-
-    /*private void chooseImage(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Picture"),PICK_IMAGE_REQUEST);
-    }
+    FirebaseDatabase firebaseDatabase;
+    FirebaseStorage firebaseStorage;
+    EditText newUserName, newUserEmail, newUserAddress, newUserContact;
+    Button updateAccount,uploadImage;
+    private Uri imagePath;
+    private static final int PICK_IMAGE_REQUEST = 100;
+    ImageView updateProfilePic;
+    String s;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -93,10 +49,10 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null )
         {
-            filePath = data.getData();
+            imagePath = data.getData();
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                mImageView.setImageBitmap(bitmap);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
+                updateProfilePic.setImageBitmap(bitmap);
             }
             catch (IOException e)
             {
@@ -105,138 +61,123 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    private void uploadImage() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_account);
+        firebaseAuth = firebaseAuth.getInstance();
+        updateProfilePic = findViewById(R.id.iVUpdateUser);
+        newUserName = findViewById(R.id.eTUpdateName);
+        newUserEmail= findViewById(R.id.eTUpdateEmail);
+        newUserAddress = findViewById(R.id.eTUpdateAddress);
+        newUserContact = findViewById(R.id.eTUpdateContact);
+        progressbar = findViewById(R.id.progressBar);
+        firebaseStorage = FirebaseStorage.getInstance();
+        progressbar.setVisibility(View.GONE);
 
-        if(filePath != null)
-        {
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Uploading...");
-            progressDialog.show();
+        mStorage = FirebaseStorage.getInstance().getReference();
 
-            StorageReference ref = mStorage.child("images/"+ UUID.randomUUID().toString());
-            ref.putFile(filePath)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressDialog.dismiss();
-                            Toast.makeText(UpdateAccountActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressDialog.dismiss();
-                            Toast.makeText(UpdateAccountActivity.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
-                                    .getTotalByteCount());
-                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
-                        }
-                    });
-        }
-    }*/
+        uploadImage= findViewById(R.id.btnUploadImage);
+        updateAccount = findViewById(R.id.btnUpdateAccount);
+        uploadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadProfileImage();
+            }
+
+            private void uploadProfileImage() {
+                if(imagePath != null)
+                {
+                    final ProgressDialog progressDialog = new ProgressDialog(UpdateAccountActivity.this);
+                    progressDialog.setTitle("Uploading...");
+                    progressDialog.show();
+
+                    final StorageReference ref = mStorage.child("images/"+ UUID.randomUUID().toString());
+                    ref.putFile(imagePath)
+                            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(UpdateAccountActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
+                                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                        @Override
+                                        public void onSuccess(Uri uri) {
+                                            s= uri.toString().trim();
+                                            Toast.makeText(UpdateAccountActivity.this,s, Toast.LENGTH_LONG).show();
+                                        }
+                                    });
+
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(UpdateAccountActivity.this, "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                                    double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
+                                            .getTotalByteCount());
+                                    progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                                }
+                            });
+
+                }
+            }
+        });
+
+        updateProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"Select Picture"),PICK_IMAGE_REQUEST);
+            }
+        });
+
+        final DatabaseReference databaseReference = firebaseDatabase.getReference();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                newUserName.setText(user.getName());
+                newUserEmail.setText(user.getEmail());
+                newUserAddress.setText(user.getAddress());
+                newUserContact.setText(user.getContact());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        updateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name =newUserName.getText().toString().trim();
+                String email =newUserEmail.getText().toString().trim();
+                String address =newUserAddress.getText().toString().trim();
+                String contact = newUserContact.getText().toString().trim();
+
+                User user = new User(name,email,address,contact,s);
+                databaseReference.setValue(user);
+                finish();
+            }
+        });
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        /*if (firebaseAuth.getCurrentUser() != null) {
-        }*/
     }
 
     @Override
     public void onClick(View v) {
 
     }
-    /*private void registerUser(){
-        final String username = name.getText().toString().trim();
-        final String user_email = email.getText().toString().trim();
-        String user_password = password.getText().toString().trim();
-        final String user_address = address.getText().toString().trim();
-        final String user_contact = phone.getText().toString().trim();
-
-        if (username.isEmpty()){
-            name.setError("Provide your user name");
-            name.requestFocus();
-            return;
-        }
-
-        if (user_email.isEmpty()){
-            email.setError("Provide your email");
-            email.requestFocus();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(user_email).matches()){
-            email.setError("Invalid email format");
-            email.requestFocus();
-            return;
-        }
-
-        if (user_password.isEmpty()){
-            password.setError("Provide your password");
-            password.requestFocus();
-            return;
-        }
-
-        if (user_password.length() < 6){
-            password.setError("Minimum password length must be with six digit");
-            password.requestFocus();
-            return;
-        }
-
-        if (user_address.isEmpty()){
-            address.setError("Provide your address");
-            address.requestFocus();
-            return;
-        }
-
-        if (user_contact.isEmpty()){
-            phone.setError("Provide your contact number");
-            phone.requestFocus();
-            return;
-        }
-
-        if (user_contact.length() !=10){
-            phone.setError("Invalid phone number");
-            phone.requestFocus();
-            return;
-        }
-
-        progressbar.setVisibility(View.VISIBLE);
-        firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    User user = new User(username,user_email,user_address,user_contact);
-                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            progressbar.setVisibility(View.GONE);
-                            if (task.isSuccessful()){
-                                Toast.makeText(UpdateAccountActivity.this,"Account update successful", Toast.LENGTH_LONG).show();
-                            } else {
-                                // Display error message
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(UpdateAccountActivity.this,"Account update failure", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
-    @Override
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.buttonUpdate:
-                registerUser();
-                break;
-        }
-    }*/
-
-
 }

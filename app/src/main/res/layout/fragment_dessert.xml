@@ -51,7 +51,7 @@
                             android:layout_marginEnd="131dp"
                             android:text="CAKE" />
                         <TextView
-                            android:id="@+id/tVcake"
+                            android:id="@+id/tVprice"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
@@ -121,7 +121,7 @@
                             android:layout_marginEnd="131dp"
                             android:text="PUDDING" />
                         <TextView
-                            android:id="@+id/tVPudding"
+                            android:id="@+id/tVPrice"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
