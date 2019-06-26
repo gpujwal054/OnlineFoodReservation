@@ -29,7 +29,7 @@
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/Icetea" />
+                android:src="@drawable/icetea" />
 
 
             <TextView
@@ -46,7 +46,7 @@
 
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ORANGEJUICE" />
+                android:src="@drawable/orange_juice" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -74,7 +74,7 @@
 
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/STRAWBERRY"
+                android:src="@drawable/strawberry"
                 tools:layout_editor_absoluteX="17dp"
                 tools:layout_editor_absoluteY="504dp" />
 

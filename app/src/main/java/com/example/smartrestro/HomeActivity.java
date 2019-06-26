@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        webView =(WebView) findViewById(R.id.social);
+        webView = findViewById(R.id.social);
         webView.setWebViewClient(new MyBrowser());
         WebSettings webSettings= webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity
         webSettings.setDomStorageEnabled(true);
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webSettings.setSaveFormData(true);
-        webView.loadUrl("file:///test/Sliding.html");
+        webView.loadUrl("www.facebook.com");
 
 
 
