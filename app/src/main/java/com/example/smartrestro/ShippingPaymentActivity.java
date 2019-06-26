@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -26,6 +28,8 @@ import khalti.widget.KhaltiButton;
 public class ShippingPaymentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    TextView delivery,name,address,contact,date,time,payment,order,totalproduct,discount,shipping,total;
+    Button btnCompleteOrder;
     //KhaltiButton khaltiButton;
     //KhaltiCheckOut khaltiCheckOut;
     //Config config;
@@ -33,7 +37,29 @@ public class ShippingPaymentActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shipping_payment);
+        delivery = findViewById(R.id.tVDelivery);
+        name = findViewById(R.id.tVName);
+        address = findViewById(R.id.tVAddress);
+        contact = findViewById(R.id.tVContact);
+        date = findViewById(R.id.tVDate);
+        time = findViewById(R.id.tVTime);
+        payment = findViewById(R.id.tVPayment);
+        order = findViewById(R.id.tVOrder);
+        totalproduct = findViewById(R.id.tVTotalP);
+        discount = findViewById(R.id.tVDiscount);
+        shipping = findViewById(R.id.tVShipping);
+        total = findViewById(R.id.tVTotal);
+
         firebaseAuth = FirebaseAuth.getInstance();
+        btnCompleteOrder = findViewById(R.id.btnCompleteOrder);
+        btnCompleteOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(ShippingPaymentActivity.this, MyOrderActivity.class);
+                startActivity(I);
+            }
+        });
+
         //khaltiButton = findViewById(R.id.khalti_button);
         //khaltiButton.setCheckOutConfig(config);
         /*config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, new OnCheckOutListener() {

@@ -46,58 +46,58 @@
             <TextView
                 android:id="@+id/restroAddress"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:background="#D1FFFFFF"
                 android:text="@string/address_lakeside_pokhara"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="24sp"
                 android:visibility="visible" />
 
             <TextView
                 android:id="@+id/restroEmail"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="#D1FFFFFF"
                 android:text="@string/e_mail_smartrestro_gmail_com"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="24sp"
                 android:visibility="visible" />
 
             <TextView
                 android:id="@+id/restroContact"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="#D1FFFFFF"
                 android:text="Contact : 9812345678"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="24sp"
                 android:visibility="visible" />
 
             <TextView
                 android:id="@+id/restroOpen"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="#D1FFFFFF"
                 android:text="Opening hours :6 am"
                 android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/restroClose"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -105,7 +105,7 @@
                 android:background="#D1FFFFFF"
                 android:text="Closing hours:10pm"
                 android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
 
