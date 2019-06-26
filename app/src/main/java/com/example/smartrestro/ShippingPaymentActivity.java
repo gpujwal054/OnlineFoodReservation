@@ -31,6 +31,9 @@ public class ShippingPaymentActivity extends AppCompatActivity
 
     TextView delivery,name,address,contact,date,time,payment,order,totalproduct,discount,shipping,total;
     Button btnCompleteOrder;
+    KhaltiButton khaltiButton;
+    KhaltiCheckOut khaltiCheckOut;
+    Config config;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,39 @@ public class ShippingPaymentActivity extends AppCompatActivity
         total = findViewById(R.id.tVTotal);
         firebaseAuth = FirebaseAuth.getInstance();
         btnCompleteOrder = findViewById(R.id.btnCompleteOrder);
+        btnCompleteOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(ShippingPaymentActivity.this, MyOrderActivity.class);
+                startActivity(I);
+            }
+        });
 
+        khaltiButton = findViewById(R.id.khalti_button);
+        khaltiButton.setCheckOutConfig(config);
+        Long amount = null;
+        config = new Config("Public Key", "Product ID", "Product Name", "Product Url", amount, new OnCheckOutListener() {
+
+            @Override
+            public void onSuccess(HashMap<String, Object> data) {
+                Log.i("Payment confirmed", data+"");
+            }
+
+            @Override
+            public void onError(String action, String message) {
+                Log.i(action, message);
+            }
+        });
+        HashMap<String, String> map = new HashMap<>();
+        map.put("merchant_extra", "This is extra data");
+        
+        khaltiCheckOut = new KhaltiCheckOut(this, config);
+        khaltiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                khaltiCheckOut.show();
+            }
+        });
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

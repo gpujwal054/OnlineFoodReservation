@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imgBtnCake"
                 android:layout_width="391dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
@@ -32,14 +32,68 @@
                 android:src="@drawable/cake" />
 
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CAKE" />
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tVcake"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="CAKE" />
+                        <TextView
+                            android:id="@+id/tVprice"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="RS:250" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnIncrement"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="increment"
+
+                        android:text="+" />
+
+                    <EditText
+                        android:id="@+id/quantity_textview"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnIncrement"
+                        android:layout_toRightOf="@id/btnIncrement"
+                        android:inputType="text"
+                        android:padding="15dp"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btnDecrement"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-" />
+                </LinearLayout>
+            </LinearLayout>
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imgBtnPudding"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
@@ -48,26 +102,69 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/pudding" />
 
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PUDDING" />
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
 
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tVPudding"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="PUDDING" />
+                        <TextView
+                            android:id="@+id/tVPrice"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="RS:350" />
+                    </LinearLayout>
 
+                    <Button
+                        android:id="@+id/btnIncrement"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_weight="1"
+                        android:onClick="increment"
 
+                        android:text="+" />
 
+                    <EditText
+                        android:id="@+id/quantity_textview"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnIncrement"
+                        android:layout_toRightOf="@id/btnIncrement"
+                        android:inputType="text"
+                        android:padding="15dp"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
 
+                    <Button
+                        android:id="@+id/btnDecrement"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-" />
+                </LinearLayout>
+            </LinearLayout>
 
-            android:id="@+id/textView3"
-            android:layout_width="45dp"
-            android:layout_height="18dp"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/scrollView2"
-            tools:layout_editor_absoluteY="480dp" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imgBtnBrownie"
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
@@ -78,16 +175,65 @@
                 tools:layout_editor_absoluteX="17dp"
                 tools:layout_editor_absoluteY="504dp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp">
 
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tVBrownie"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="BROWNIE" />
+                        <TextView
+                            android:id="@+id/tVBrownie"
+                            android:layout_width="129dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="131dp"
+                            android:text="RS:450" />
+                    </LinearLayout>
 
+                    <Button
+                        android:id="@+id/btnIncrement"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="increment"
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BROWNIE WAFFLE"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="695dp" />
+                        android:text="+" />
+
+                    <EditText
+                        android:id="@+id/quantity_textview"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnIncrement"
+                        android:layout_toRightOf="@id/btnIncrement"
+                        android:inputType="text"
+                        android:padding="15dp"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btnDecrement"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
