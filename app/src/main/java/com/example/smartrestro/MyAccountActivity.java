@@ -1,17 +1,14 @@
 package com.example.smartrestro;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
-import android.util.Log;
 import android.view.MenuItem;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +24,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,18 +33,19 @@ public class MyAccountActivity extends AppCompatActivity
     FirebaseAuth firebaseAuth;
     FirebaseStorage firebaseStorage;
     FirebaseDatabase firebaseDatabase;
-    ImageView userProfile;
-    TextView userName,userAddress,userEmail,userContact;
-    Button btnUpdateMyAcc,btnOrder;
+    ImageView user;
+    TextView name,address,email,contact;
+    Button btnUpdateMyAcc,btnOrder,btnDeleteAcc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-        userName = findViewById(R.id.userName);
-        userAddress = findViewById(R.id.userAddress);
-        userEmail = findViewById(R.id.userEmail);
-        userContact = findViewById(R.id.userContact);
-        userProfile = findViewById(R.id.imgViewUser);
+        user = findViewById(R.id.iVUser);
+        name = findViewById(R.id.tVName);
+        address = findViewById(R.id.tVAddress);
+        email = findViewById(R.id.tVEmail);
+        contact= findViewById(R.id.tVContact);
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
@@ -65,10 +61,10 @@ public class MyAccountActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                userName.setText("Name" + user.getName());
-                userAddress.setText("Email" + user.getEmail());
-                userEmail.setText("Address" + user.getAddress());
-                userContact.setText("Contact" + user.getContact());
+                name.setText("Name" + user.getName());
+                address.setText("Email" + user.getEmail());
+                email.setText("Address" + user.getAddress());
+                contact.setText("Contact" + user.getContact());
             }
 
             @Override
@@ -76,7 +72,7 @@ public class MyAccountActivity extends AppCompatActivity
 
             }
         });
-        btnUpdateMyAcc = findViewById(R.id.btnUpdateMyAccount);
+        btnUpdateMyAcc = findViewById(R.id.btnUpdateAccount);
         btnOrder = findViewById(R.id.btnMyOrder);
         Toolbar toolbar = findViewById(R.id.toolbar);
         btnUpdateMyAcc.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +85,14 @@ public class MyAccountActivity extends AppCompatActivity
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I=new Intent(MyAccountActivity.this, MyOrderActivity.class);
+                Intent I=new Intent(MyAccountActivity.this, UpdateAccountActivity.class);
+                startActivity(I);
+            }
+        });
+        btnDeleteAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(MyAccountActivity.this, UpdateAccountActivity.class);
                 startActivity(I);
             }
         });
