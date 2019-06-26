@@ -29,7 +29,6 @@ public class BookTableActivity extends AppCompatActivity
     TabLayout tablayout;
     TabItem tabfirst,tabsecond,tabbalcony,tabgarden;
     ViewPager viewPager;
-    ImageButton buttonTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,14 +78,6 @@ public class BookTableActivity extends AppCompatActivity
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
-            }
-        });
-        buttonTable = findViewById(R.id.btnTableActive);
-        buttonTable.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent I = new Intent(BookTableActivity.this, MenuActivity.class);
-                startActivity(I);
             }
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));

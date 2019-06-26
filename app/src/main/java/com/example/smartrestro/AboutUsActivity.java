@@ -12,18 +12,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class AboutUsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
-    TextView textView;
-    Button btn;
+    ImageView image;
+    TextView moto, address,email,contact, open,close;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+        image= findViewById(R.id.iVImage);
+        moto = findViewById(R.id.tVMoto);
+        address = findViewById(R.id.tVAddress);
+        email = findViewById(R.id.tVEmail);
+        contact = findViewById(R.id.tVContact);
+        open = findViewById(R.id.tVOpen);
+        close = findViewById(R.id.tVClose);
+
+
         firebaseAuth = FirebaseAuth.getInstance();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

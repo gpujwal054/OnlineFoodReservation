@@ -24,10 +24,7 @@
             android:id="@+id/nav_myAccount"
             android:icon="@drawable/my_account"
             android:title="My Account" />
-        <item
-            android:id="@+id/nav_myDetails"
-            android:icon="@drawable/my_details"
-            android:title="My Details" />
+
         <item
             android:id="@+id/nav_bookTable"
             android:icon="@drawable/table"

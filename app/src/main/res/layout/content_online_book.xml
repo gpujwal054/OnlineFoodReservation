@@ -26,17 +26,17 @@
             <TextView
                 android:id="@+id/tVName"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Name"
                 android:textColor="#F3EDED"
-                android:textSize="28dp" />
+                android:textSize="24dp" />
 
             <EditText
                 android:id="@+id/eTName"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
@@ -49,139 +49,139 @@
             <TextView
                 android:id="@+id/tVAddress"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Address"
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTAddress"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="textPostalAddress"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/tVPhoneN"
+                android:id="@+id/tVContact"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Phone No."
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTPhoneN"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="phone"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckInD"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Check In Date"
                 android:textColor="#F3EDED "
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckInD"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="date"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
-                android:textSize="24sp"/>
+                android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckOutD"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Check Out Date"
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckOutD"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="date"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckInT"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Check In Time"
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckInT"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="time"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tVCheckOutT"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Check Out Time"
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckOutT"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="time"
-                android:textColorHint="#E8FFFFFF"
                 android:textColor="@color/black"
+                android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
 
@@ -189,44 +189,55 @@
             <TextView
                 android:id="@+id/tVNumberOfP"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Number of People"
                 android:textColor="#F3EDED"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTNumberOfP"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/aqua"
                 android:ems="10"
                 android:inputType="number"
+                android:textColor="@color/black"
                 android:textColorHint="#E8FFFFFF"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnChooseTable"
+                android:layout_width="378dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Choose Table "
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <Button
                 android:id="@+id/btnBookTable"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_width="378dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Book  Table "
+                android:text="Book Table "
                 android:textColor="@color/black"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <ProgressBar
                 android:id="@+id/progressbar"
-                android:layout_width="399dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="10dp" />
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp" />
         </LinearLayout>
     </ScrollView>
 

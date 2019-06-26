@@ -11,16 +11,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PromotionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    ImageView wines ,drinks;
+    TextView twines, tdrinks;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotion);
         firebaseAuth = FirebaseAuth.getInstance();
+        wines = findViewById(R.id.iVWines);
+        drinks = findViewById(R.id.iVDrinks);
+        twines = findViewById(R.id.tVWines);
+        tdrinks = findViewById(R.id.tVDrinks);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

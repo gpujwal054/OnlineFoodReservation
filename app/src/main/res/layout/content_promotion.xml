@@ -22,14 +22,14 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/restroWines"
+                android:id="@+id/iVWines"
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/wines" />
 
             <TextView
-                android:id="@+id/textWines"
+                android:id="@+id/tVWines"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
@@ -42,7 +42,7 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:id="@+id/restroDrinks"
+                android:id="@+id/iVDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="201dp"
                 android:layout_marginTop="20dp"
@@ -51,7 +51,7 @@
                 app:srcCompat="@drawable/drinks" />
 
             <TextView
-                android:id="@+id/textDrinks"
+                android:id="@+id/tVDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="10dp"

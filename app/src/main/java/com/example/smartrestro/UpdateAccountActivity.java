@@ -30,13 +30,14 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class UpdateAccountActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText newUserName, newUserEmail, newUserAddress, newUserContact;
+
     private ProgressBar progressbar;
     private FirebaseAuth firebaseAuth;
     StorageReference mStorage;
     FirebaseDatabase firebaseDatabase;
     FirebaseStorage firebaseStorage;
-    Button updateAccount,uploadProfilePic;
+    EditText newUserName, newUserEmail, newUserAddress, newUserContact;
+    Button updateAccount,uploadImage;
     private Uri imagePath;
     private static final int PICK_IMAGE_REQUEST = 100;
     ImageView updateProfilePic;
@@ -65,18 +66,20 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_account);
         firebaseAuth = firebaseAuth.getInstance();
-        newUserName = findViewById(R.id.newEditTextName);
-        newUserEmail = findViewById(R.id.newEditTextEmail);
-        newUserAddress = findViewById(R.id.newEditTextAddress);
-        newUserContact = findViewById(R.id.newEditTextContact);
-        updateAccount = findViewById(R.id.btnUpdateMyAccount);
+        updateProfilePic = findViewById(R.id.iVUpdateUser);
+        newUserName = findViewById(R.id.eTUpdateName);
+        newUserEmail= findViewById(R.id.eTUpdateEmail);
+        newUserAddress = findViewById(R.id.eTUpdateAddress);
+        newUserContact = findViewById(R.id.eTUpdateContact);
         progressbar = findViewById(R.id.progressBar);
         firebaseStorage = FirebaseStorage.getInstance();
         progressbar.setVisibility(View.GONE);
+
         mStorage = FirebaseStorage.getInstance().getReference();
-        updateProfilePic = findViewById(R.id.newImgView);
-        uploadProfilePic = findViewById(R.id.btnNewUpload);
-        uploadProfilePic.setOnClickListener(new View.OnClickListener() {
+
+        uploadImage= findViewById(R.id.btnUploadImage);
+        updateAccount = findViewById(R.id.btnUpdateAccount);
+        uploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 uploadProfileImage();
@@ -136,7 +139,7 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-        final DatabaseReference databaseReference = firebaseDatabase.getReference();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference("User");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -156,9 +159,9 @@ public class UpdateAccountActivity extends AppCompatActivity implements View.OnC
         updateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = newUserName.getText().toString().trim();
-                String email = newUserEmail.getText().toString().trim();
-                String address = newUserAddress.getText().toString().trim();
+                String name =newUserName.getText().toString().trim();
+                String email =newUserEmail.getText().toString().trim();
+                String address =newUserAddress.getText().toString().trim();
                 String contact = newUserContact.getText().toString().trim();
 
                 User user = new User(name,email,address,contact,s);

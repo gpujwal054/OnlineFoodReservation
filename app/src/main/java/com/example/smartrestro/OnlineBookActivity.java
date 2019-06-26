@@ -2,9 +2,14 @@ package com.example.smartrestro;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -15,33 +20,53 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.widget.TextView;
+
+import java.util.Objects;
+
 
 public class OnlineBookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    EditText name, address, contact, checkInDate, checkOutDate, checkInTime, checkOutTime, numberOfPeople;
+    TextView name,address,contact,checkInDate,checkOutDate,checkInTime,checkOutTime,numberOfPeople;
+    Button btnBookT,btnChooseT;
+
     ProgressBar progressbar;
     public Button bookTable;
+    FirebaseAuth firebaseAuth;
     private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_book);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+         name = findViewById(R.id.eTName);
+         address=findViewById(R.id.eTAddress);
+         contact =findViewById(R.id.eTPhoneN);
         name = findViewById(R.id.eTName);
         address = findViewById(R.id.eTAddress);
-        contact = findViewById(R.id.eTPhoneN);
+        contact = findViewById(R.id.etContact);
         checkInDate = findViewById(R.id.eTCheckInD);
         checkOutDate = findViewById(R.id.eTCheckOutD);
-        //checkInTime = findViewById(R.id.eTCheckInT);
-        //checkOutTime = findViewById(R.id.eTCheckOutT);
+        checkInTime = findViewById(R.id.eTCheckInT);
+        checkOutTime = findViewById(R.id.eTCheckOutT);
         numberOfPeople = findViewById(R.id.eTNumberOfP);
         progressbar = findViewById(R.id.progressBar);
-        bookTable = findViewById(R.id.btnBookTable);
-        bookTable.setOnClickListener(new View.OnClickListener() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        btnChooseT = findViewById(R.id.btnChooseTable);
+        btnBookT = findViewById(R.id.btnBookTable);
+        btnChooseT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent I=new Intent(OnlineBookActivity.this, BookTableActivity.class);
+                startActivity(I);
+            }
+        });
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        btnBookT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 foodOrder();
@@ -52,11 +77,11 @@ public class OnlineBookActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-    }
+        }
 
 
     @Override
@@ -216,7 +241,18 @@ public class OnlineBookActivity extends AppCompatActivity
 
         progressbar.setVisibility(View.VISIBLE);
         OnlineBook onlineBook = new OnlineBook(username,user_address,user_contact,user_checkIn_Date,user_checkOut_Date,user_checkIn_Time,user_checkOut_Time,user_number);
-        mDatabase.child("online book").setValue(onlineBook);
+        FirebaseDatabase.getInstance().getReference("order").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).setValue(onlineBook).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                progressbar.setVisibility(View.GONE);
+                            if (task.isSuccessful()){
+                                Toast.makeText(OnlineBookActivity.this,"Registration successful. Please verify your email address.", Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(OnlineBookActivity.this,MainActivity.class));
+                            } else{
+                                Toast.makeText(OnlineBookActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+            }
+        });
 
     }
 }

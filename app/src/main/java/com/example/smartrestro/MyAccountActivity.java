@@ -1,26 +1,25 @@
 package com.example.smartrestro;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
-import android.util.Log;
 import android.view.MenuItem;
 
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,57 +27,61 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyAccountActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
     FirebaseStorage firebaseStorage;
-    FirebaseDatabase firebaseDatabase;
-    ImageView userProfile;
-    TextView userName,userAddress,userEmail,userContact;
-    Button btnUpdateMyAcc,btnOrder;
+    FirebaseDatabase mFirebaseDatabase;
+    DatabaseReference myRef,addres,image,phnumber,emaill;
+    ImageView user;
+    TextView name,address,email,contact;
+    Button btnUpdateMyAcc,btnOrder,deleteUserAcc;
+    String userID;
+    TextView userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-        userName = findViewById(R.id.userName);
-        userAddress = findViewById(R.id.userAddress);
-        userEmail = findViewById(R.id.userEmail);
-        userContact = findViewById(R.id.userContact);
-        userProfile = findViewById(R.id.imgViewUser);
+        userName = findViewById(R.id.tVName);
+        user = findViewById(R.id.iVUser);
+        name = findViewById(R.id.tVName);
+        address = findViewById(R.id.tVAddress);
+        email = findViewById(R.id.tVEmail);
+        contact= findViewById(R.id.tVContact);
+        deleteUserAcc = findViewById(R.id.btnDeleteAcc);
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        myRef = mFirebaseDatabase.getReference("Users").child("lzBiEdjrALgeshMM4YImW8732Xp1").child("name");
+        phnumber= mFirebaseDatabase.getReference("Users").child("lzBiEdjrALgeshMM4YImW8732Xp1").child("contact");
+        emaill = mFirebaseDatabase.getReference("Users").child("lzBiEdjrALgeshMM4YImW8732Xp1").child("email");
+        addres = mFirebaseDatabase.getReference("Users").child("lzBiEdjrALgeshMM4YImW8732Xp1").child("address");
+        image = mFirebaseDatabase.getReference("Users").child("lzBiEdjrALgeshMM4YImW8732Xp1").child("url");
         firebaseStorage = FirebaseStorage.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
-        //StorageReference storageReference = firebaseStorage.getReference();
-        /*storageReference.child(firebaseAuth.getUid()).child("images/").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).fit().centerCrop().into(userProfile);
-            }
-        });*/
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        userID = firebaseUser.getUid();
+        btnUpdateMyAcc = findViewById(R.id.btnUpdateAccount);
+        btnOrder = findViewById(R.id.btnMyOrder);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                userName.setText("Name" + user.getName());
-                userAddress.setText("Email" + user.getEmail());
-                userEmail.setText("Address" + user.getAddress());
-                userContact.setText("Contact" + user.getContact());
-            }
 
-            @Override
+
+                        name.setText(dataSnapshot.getValue(String.class));
+
+            }
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-        btnUpdateMyAcc = findViewById(R.id.btnUpdateMyAccount);
-        btnOrder = findViewById(R.id.btnMyOrder);
-        Toolbar toolbar = findViewById(R.id.toolbar);
         btnUpdateMyAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +96,37 @@ public class MyAccountActivity extends AppCompatActivity
                 startActivity(I);
             }
         });
+
+        deleteUserAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user !=null){
+                user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MyAccountActivity.this, "User account deleted successfully", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(MyAccountActivity.this, "User account delete process unsuccessful", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+            }
+        });
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null){
+                    Toast.makeText(MyAccountActivity.this,"Successfully signed in with:" + user.getEmail(),Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MyAccountActivity.this,"Successfully signed out",Toast.LENGTH_LONG).show();
+                }
+            }
+        };
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -185,5 +219,19 @@ public class MyAccountActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mAuthListener != null){
+
+        }
     }
 }
