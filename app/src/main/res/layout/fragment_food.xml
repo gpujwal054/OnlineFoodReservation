@@ -43,7 +43,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/piza" />
@@ -54,41 +53,23 @@
                 android:layout_height="wrap_content"
                 android:text="PIZZA" />
 
-
-
-
-
-
-        android:id="@+id/textView3"
-        android:layout_width="45dp"
-        android:layout_height="18dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/scrollView2"
-        tools:layout_editor_absoluteY="480dp" />
-
             <ImageButton
                 android:id="@+id/imgBtnBurger"
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/burger"
-                tools:layout_editor_absoluteX="17dp"
-                tools:layout_editor_absoluteY="504dp" />
+                android:src="@drawable/burger" />
 
-
-
-
-    <TextView
-        android:id="@+id/tVburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BURGER"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="695dp" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/tVburger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BURGER"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="695dp" />
+        </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

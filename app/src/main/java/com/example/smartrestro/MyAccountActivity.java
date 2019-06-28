@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import android.view.MenuItem;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -43,13 +44,11 @@ public class MyAccountActivity extends AppCompatActivity
     TextView name,address,email,contact;
     Button btnUpdateMyAcc,btnOrder,deleteUserAcc;
     String userID;
-    TextView userName;
-
+    String imgid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
-        userName = findViewById(R.id.tVName);
         user = findViewById(R.id.iVUser);
         name = findViewById(R.id.tVName);
         address = findViewById(R.id.tVAddress);
@@ -82,6 +81,69 @@ public class MyAccountActivity extends AppCompatActivity
 
             }
         });
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                name.setText(dataSnapshot.getValue(String.class));
+
+            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        addres.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                address.setText(dataSnapshot.getValue(String.class));
+
+            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        emaill.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                email.setText(dataSnapshot.getValue(String.class));
+
+            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        phnumber.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                contact.setText(dataSnapshot.getValue(String.class));
+
+            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        image.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                imgid = dataSnapshot.getValue(String.class);
+                Glide.with(getApplicationContext()).load(imgid).into(user);
+
+            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         btnUpdateMyAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

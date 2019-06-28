@@ -98,35 +98,12 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Check In Date"
+                android:text="Date"
                 android:textColor="#F3EDED "
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/eTCheckInD"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/aqua"
-                android:ems="10"
-                android:inputType="date"
-                android:textColor="@color/black"
-                android:textColorHint="#E8FFFFFF"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tVCheckOutD"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Check Out Date"
-                android:textColor="#F3EDED"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/eTCheckOutD"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginStart="16dp"
@@ -161,30 +138,6 @@
                 android:textColorHint="#E8FFFFFF"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/tVCheckOutT"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Check Out Time"
-                android:textColor="#F3EDED"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/eTCheckOutT"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/aqua"
-                android:ems="10"
-                android:inputType="time"
-                android:textColor="@color/black"
-                android:textColorHint="#E8FFFFFF"
-                android:textSize="24sp" />
-
-
 
             <TextView
                 android:id="@+id/tVNumberOfP"
@@ -217,17 +170,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Choose Table "
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-
-            <Button
-                android:id="@+id/btnBookTable"
-                android:layout_width="378dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="Book Table "
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 

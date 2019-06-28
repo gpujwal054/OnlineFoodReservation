@@ -78,7 +78,7 @@ public class ShippingPaymentActivity extends AppCompatActivity
         });
         HashMap<String, String> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
-        
+
         khaltiCheckOut = new KhaltiCheckOut(this, config);
         khaltiButton.setOnClickListener(new View.OnClickListener() {
             @Override

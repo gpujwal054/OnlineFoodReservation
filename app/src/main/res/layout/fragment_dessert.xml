@@ -60,17 +60,16 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
-                        android:layout_marginTop="30dp"
+                        android:id="@+id/btnIncrement1"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:onClick="increment"
 
                         android:text="+" />
 
                     <EditText
-                        android:id="@+id/quantity_textview"
+                        android:id="@+id/textView1"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -83,7 +82,7 @@
                         android:textSize="16sp" />
 
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement1"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
@@ -97,7 +96,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/pudding" />
@@ -130,17 +128,15 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
+                        android:id="@+id/btnIncrement2"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:onClick="increment"
-
                         android:text="+" />
 
                     <EditText
-                        android:id="@+id/quantity_textview"
+                        android:id="@+id/textView2"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -151,9 +147,8 @@
                         android:text="0"
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
-
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement2"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
@@ -168,7 +163,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/brownie"
@@ -194,7 +188,7 @@
                             android:layout_marginEnd="131dp"
                             android:text="BROWNIE" />
                         <TextView
-                            android:id="@+id/tVBrownie"
+                            android:id="@+id/tVBrownie1"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
@@ -208,12 +202,10 @@
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="increment"
-
                         android:text="+" />
 
                     <EditText
-                        android:id="@+id/quantity_textview"
+                        android:id="@+id/textView3"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
