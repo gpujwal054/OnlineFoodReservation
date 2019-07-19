@@ -28,11 +28,13 @@ import khalti.widget.KhaltiButton;
 public class ShippingPaymentActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth firebaseAuth;
+
     TextView delivery,name,address,contact,date,time,payment,order,totalproduct,discount,shipping,total;
     Button btnCompleteOrder;
     KhaltiButton khaltiButton;
     KhaltiCheckOut khaltiCheckOut;
     Config config;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +51,6 @@ public class ShippingPaymentActivity extends AppCompatActivity
         discount = findViewById(R.id.tVDiscount);
         shipping = findViewById(R.id.tVShipping);
         total = findViewById(R.id.tVTotal);
-
         firebaseAuth = FirebaseAuth.getInstance();
         btnCompleteOrder = findViewById(R.id.btnCompleteOrder);
 
@@ -70,7 +71,6 @@ public class ShippingPaymentActivity extends AppCompatActivity
         });
         HashMap<String, String> map = new HashMap<>();
         map.put("merchant_extra", "This is extra data");
-
 
         khaltiCheckOut = new KhaltiCheckOut(this, config);
         khaltiButton.setOnClickListener(new View.OnClickListener() {
@@ -149,22 +149,13 @@ public class ShippingPaymentActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             Intent intent=new Intent(ShippingPaymentActivity.this,MyOrderActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myAccount) {
-            Intent intent=new Intent(ShippingPaymentActivity.this,MyAccountActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_myDetails) {
-            Intent intent=new Intent(ShippingPaymentActivity.this,MyDetailsActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(ShippingPaymentActivity.this,BookTableActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(ShippingPaymentActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_location) {
-            Intent intent=new Intent(ShippingPaymentActivity.this,MapActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_aboutUs) {
+        }  else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(ShippingPaymentActivity.this,AboutUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_logOut) {

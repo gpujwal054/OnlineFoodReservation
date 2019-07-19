@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BurgerActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tVVeg"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="VEG BURGER" />
+                    <TextView
+                        android:id="@+id/tVVeg1"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="RS:200" />
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btnIncrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="increment"
+
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/quantity_textview"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnIncrement"
+                    android:layout_toRightOf="@id/btnIncrement"
+                    android:inputType="text"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnDecrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tVChicken"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="CHICKEN BURGER" />
+                    <TextView
+                        android:id="@+id/tVMartini"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="RS:300" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnIncrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="increment"
+
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/quantity_textview"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnIncrement"
+                    android:layout_toRightOf="@id/btnIncrement"
+                    android:inputType="text"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnDecrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tVham"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="HAM BURGER" />
+                    <TextView
+                        android:id="@+id/tVham"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="RS:350" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnIncrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="increment"
+
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/quantity_textview"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnIncrement"
+                    android:layout_toRightOf="@id/btnIncrement"
+                    android:inputType="text"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnDecrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tVCrunchy"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="CRUNCHY SPICY CHICKEN BURGER" />
+                    <TextView
+                        android:id="@+id/tVMartini"
+                        android:layout_width="129dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="131dp"
+                        android:text="RS:400" />
+                </LinearLayout>                <Button
+                    android:id="@+id/btnIncrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="increment"
+
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/quantity_textview"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnIncrement"
+                    android:layout_toRightOf="@id/btnIncrement"
+                    android:inputType="text"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnDecrement"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

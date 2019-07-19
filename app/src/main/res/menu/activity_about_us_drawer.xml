@@ -24,10 +24,7 @@
             android:id="@+id/nav_myAccount"
 
             android:title="My Account" />
-        <item
-            android:id="@+id/nav_myDetails"
 
-            android:title="My Details" />
         <item
             android:id="@+id/nav_bookTable"
 

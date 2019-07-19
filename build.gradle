@@ -24,8 +24,13 @@ allprojects {
         
     }
     gradle.projectsEvaluated {
+<<<<<<< HEAD
         tasks.withType(JavaCompile){
             options.compilerArgs << "-Xint:deprecation"
+=======
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+>>>>>>> f0ac936a0623ecdc60a2eab4bcb65e9c8f1719c6
         }
     }
 }

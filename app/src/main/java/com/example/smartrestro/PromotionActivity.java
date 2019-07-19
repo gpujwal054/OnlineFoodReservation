@@ -101,22 +101,13 @@ public class PromotionActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             Intent intent=new Intent(PromotionActivity.this,MyOrderActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myAccount) {
-            Intent intent=new Intent(PromotionActivity.this,MyAccountActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_myDetails) {
-            Intent intent=new Intent(PromotionActivity.this,MyDetailsActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_bookTable) {
+        }  else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(PromotionActivity.this,BookTableActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(PromotionActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_location) {
-            Intent intent=new Intent(PromotionActivity.this,MapActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_aboutUs) {
+        }  else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(PromotionActivity.this,AboutUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_logOut) {
