@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -26,6 +29,26 @@ import android.widget.Toast;
 
 public class BookTableActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int id = item.getItemId();
+
+            if (id == R.id.navigation_home) {
+                Intent intent=new Intent(BookTableActivity.this,HomeActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.navigation_aboutUs) {
+                Intent intent=new Intent(BookTableActivity.this,AboutUsActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.navigation_bookTable) {
+                Intent intent=new Intent(BookTableActivity.this,BookTableActivity.class);
+                startActivity(intent);
+            }
+            return true;
+        }
+    };
     FirebaseAuth firebaseAuth;
     PageAdapter pageAdapter;
     TabLayout tablayout;
@@ -106,12 +129,12 @@ public class BookTableActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     @Override
@@ -124,14 +147,6 @@ public class BookTableActivity extends AppCompatActivity
         }
     }
 
-    private void logout() {
-        FirebaseAuth.getInstance().signOut();
-        Toast.makeText(BookTableActivity.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(BookTableActivity.this, IndexActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -173,24 +188,15 @@ public class BookTableActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             Intent intent=new Intent(BookTableActivity.this,MyOrderActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myAccount) {
-            Intent intent=new Intent(BookTableActivity.this,MyAccountActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(BookTableActivity.this,BookTableActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(BookTableActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_location) {
-            Intent intent=new Intent(BookTableActivity.this,MapActivity.class);
-            startActivity(intent);
         } else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(BookTableActivity.this,AboutUsActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_logOut) {
-            logout();
-            return true;
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -48,14 +48,14 @@ public class OnlineBookActivity extends AppCompatActivity
         address = findViewById(R.id.eTAddress);
         contact = findViewById(R.id.etContact);
         checkInDate = findViewById(R.id.eTCheckInD);
-        checkOutDate = findViewById(R.id.eTCheckOutD);
+
         checkInTime = findViewById(R.id.eTCheckInT);
-        checkOutTime = findViewById(R.id.eTCheckOutT);
+
         numberOfPeople = findViewById(R.id.eTNumberOfP);
-        progressbar = findViewById(R.id.progressBar);
+
         firebaseAuth = FirebaseAuth.getInstance();
         btnChooseT = findViewById(R.id.btnChooseTable);
-        btnBookT = findViewById(R.id.btnBookTable);
+
         btnChooseT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,10 +143,7 @@ public class OnlineBookActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             Intent intent=new Intent(OnlineBookActivity.this,MyOrderActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_myAccount) {
-            Intent intent=new Intent(OnlineBookActivity.this,MyAccountActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_bookTable) {
+        }  else if (id == R.id.nav_bookTable) {
             Intent intent=new Intent(OnlineBookActivity.this,BookTableActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_onlineBookTable) {
@@ -155,10 +152,7 @@ public class OnlineBookActivity extends AppCompatActivity
         } else if (id == R.id.nav_shipping) {
             Intent intent=new Intent(OnlineBookActivity.this,ShippingPaymentActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_location) {
-            Intent intent=new Intent(OnlineBookActivity.this,MapActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_aboutUs) {
+        }  else if (id == R.id.nav_aboutUs) {
             Intent intent=new Intent(OnlineBookActivity.this,AboutUsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_logOut) {

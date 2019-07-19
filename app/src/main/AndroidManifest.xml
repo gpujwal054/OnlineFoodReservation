@@ -19,11 +19,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BreakFastActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".BreakFastActivity" />
         <activity android:name=".PizzaActivity" />
         <activity android:name=".BurgerActivity" />
-        <activity android:name=".TestFire" />
-        <activity android:name=".UpdateAccountActivity" />
+        <activity android:name=".TestFire" /> <!-- <activity android:name=".UpdateAccountActivity" /> -->
         <activity
             android:name=".OnlineBookActivity"
             android:label="@string/title_activity_online_book"
@@ -39,10 +39,11 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
+        <!--
+<activity
             android:name=".MapActivity"
             android:label="Map" />
+        -->
         <activity
             android:name=".IndexActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -56,10 +57,12 @@
             android:name=".BookTableActivity"
             android:label="@string/title_activity_book_table"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
+        <!--
+<activity
             android:name=".MyAccountActivity"
             android:label="@string/title_activity_my_account"
             android:theme="@style/AppTheme.NoActionBar" />
+        -->
         <activity
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_about_us"
@@ -83,12 +86,6 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:label="Registration" />
-        <activity
-            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

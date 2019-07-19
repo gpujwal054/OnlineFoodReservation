@@ -45,4 +45,8 @@
     <string name="send_email">Send Email</string>
     <string name="e_mail_smartrestro_gmail_com">E-mail : smartrestro@gmail.com</string>
     <string name="address_lakeside_pokhara">Address : Lakeside,Pokhara</string>
+    <string name="title_activity_main">Smart Restro</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
