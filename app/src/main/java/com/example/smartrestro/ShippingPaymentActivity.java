@@ -52,13 +52,6 @@ public class ShippingPaymentActivity extends AppCompatActivity
 
         firebaseAuth = FirebaseAuth.getInstance();
         btnCompleteOrder = findViewById(R.id.btnCompleteOrder);
-        btnCompleteOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent I=new Intent(ShippingPaymentActivity.this, MyOrderActivity.class);
-                startActivity(I);
-            }
-        });
 
         khaltiButton = findViewById(R.id.khalti_button);
         khaltiButton.setCheckOutConfig(config);

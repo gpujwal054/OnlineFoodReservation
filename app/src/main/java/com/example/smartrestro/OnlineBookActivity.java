@@ -50,7 +50,7 @@ public class OnlineBookActivity extends AppCompatActivity
         btnBookT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent I=new Intent(OnlineBookActivity.this, MyOrderActivity.class);
+                Intent I=new Intent(OnlineBookActivity.this, BookTableActivity.class);
                 startActivity(I);
             }
         });
