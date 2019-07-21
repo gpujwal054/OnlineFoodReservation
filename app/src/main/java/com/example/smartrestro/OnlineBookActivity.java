@@ -27,11 +27,9 @@ import android.widget.TextView;
 import java.util.Objects;
 
 
-public class OnlineBookActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class OnlineBookActivity extends AppCompatActivity {
     TextView name,address,contact,checkInDate,checkOutDate,checkInTime,checkOutTime,numberOfPeople;
     Button btnBookT,btnChooseT;
-
     ProgressBar progressbar;
     public Button bookTable;
     FirebaseAuth firebaseAuth;
@@ -41,7 +39,7 @@ public class OnlineBookActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_book);
-         name = findViewById(R.id.eTName);
+         /*name = findViewById(R.id.eTName);
          address=findViewById(R.id.eTAddress);
          contact =findViewById(R.id.eTPhoneN);
         name = findViewById(R.id.eTName);
@@ -54,15 +52,9 @@ public class OnlineBookActivity extends AppCompatActivity
         numberOfPeople = findViewById(R.id.eTNumberOfP);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        btnChooseT = findViewById(R.id.btnChooseTable);
+        btnChooseT = findViewById(R.id.btnChooseTable);*/
 
-        btnChooseT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent I=new Intent(OnlineBookActivity.this, BookTableActivity.class);
-                startActivity(I);
-            }
-        });
+
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -75,12 +67,10 @@ public class OnlineBookActivity extends AppCompatActivity
         mDatabase = FirebaseDatabase.getInstance().getReference();
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
         this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
         }
 
 
@@ -103,12 +93,12 @@ public class OnlineBookActivity extends AppCompatActivity
         finish();
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.online_book, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -118,52 +108,13 @@ public class OnlineBookActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-            Intent intent=new Intent(OnlineBookActivity.this,HomeActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_promotion) {
-            Intent intent=new Intent(OnlineBookActivity.this,PromotionActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_menus) {
-            Intent intent=new Intent(OnlineBookActivity.this,MenuActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_order) {
-            Intent intent=new Intent(OnlineBookActivity.this,MyOrderActivity.class);
-            startActivity(intent);
-        }  else if (id == R.id.nav_bookTable) {
-            Intent intent=new Intent(OnlineBookActivity.this,BookTableActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_onlineBookTable) {
-            Intent intent=new Intent(OnlineBookActivity.this,OnlineBookActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_shipping) {
-            Intent intent=new Intent(OnlineBookActivity.this,ShippingPaymentActivity.class);
-            startActivity(intent);
-        }  else if (id == R.id.nav_aboutUs) {
-            Intent intent=new Intent(OnlineBookActivity.this,AboutUsActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_logOut) {
-            logout();
-            return true;
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     @Override
     protected void onStart() {

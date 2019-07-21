@@ -26,8 +26,9 @@ public class FoodFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_food, container, false);
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_food, container, false);
+        /*View v = inflater.inflate(R.layout.fragment_food, container, false);
         breakFastFragment = v.findViewById(R.id.imgBtnBreakfast);
         burgerFragment = v.findViewById(R.id.imgBtnBurger);
         pizzaFragment = v.findViewById(R.id.imgBtnPizza);
@@ -53,7 +54,7 @@ public class FoodFragment extends Fragment {
             }
         });
 
-        return v;
+        return v;*/
     }
 
 }

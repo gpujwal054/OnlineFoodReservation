@@ -28,8 +28,8 @@ public class FirstFloorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_first_floor,container,false);
-        imgBtnActive = v.findViewById(R.id.btnTableActive);
+        return inflater.inflate(R.layout.fragment_first_floor, container, false);
+        /*imgBtnActive = v.findViewById(R.id.btnTableActive);
         imgBtnReserved = v.findViewById(R.id.btnTableReserved);
         imgBtnVacant = v.findViewById(R.id.btnTableVacant);
         imgBtnActive.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,6 @@ public class FirstFloorFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        return v;
+        return v;*/
     }
-
 }

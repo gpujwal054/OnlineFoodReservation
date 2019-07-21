@@ -9,75 +9,45 @@
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/btnTableActive"
-            android:layout_width="116dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="557dp"
-            android:text="table1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnTableReserved"
-            android:layout_width="124dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="557dp"
-            android:src="?attr/colorButtonNormal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnTableVacant"
-            android:layout_width="131dp"
-            android:layout_height="94dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="80dp"
-            android:src="?attr/colorButtonNormal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTableActive" />
-
-        <TextView
-            android:id="@+id/tableActive"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTableActive" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tableReserved"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="148dp"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/tableActive"
-            app:layout_constraintTop_toBottomOf="@+id/btnTableReserved" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tableVacant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTableVacant" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Button" />
 
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Button" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:text="Button" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </FrameLayout>
