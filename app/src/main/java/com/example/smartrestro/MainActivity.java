@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = getSupportActionBar();
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
@@ -41,21 +42,22 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_menu:
-                    toolbar.setTitle("Menu");
-                    fragment = new MenuFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_search:
-                    toolbar.setTitle("Search");
-                    fragment = new SearchFragment();
-                    loadFragment(fragment);
-                    return true;
                 case R.id.navigation_table:
                     toolbar.setTitle("Table");
                     fragment = new TableFragment();
                     loadFragment(fragment);
                     return true;
+                case R.id.navigation_menu:
+                    toolbar.setTitle("Menu");
+                    fragment = new MenuFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_cart:
+                    toolbar.setTitle("Your Cart");
+                    fragment = new CartFragment();
+                    loadFragment(fragment);
+                    return true;
+
                 case R.id.navigation_payment:
                     toolbar.setTitle("Shipping And Payment");
                     fragment = new ShippingPaymentFragment();

@@ -19,24 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ShippingPaymentActivity"
-            android:label="@string/title_activity_shipping_payment"/>
-        <activity
-            android:name=".SearchActivity"
-            android:label="Search" />
-        <activity
-            android:name=".TableActivity"
-            android:label="Table" />
-        <activity
-            android:name=".MenuActivity"
-            android:label="Menu" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home" />
+
         <activity android:name=".MainActivity" />
-        <activity android:name=".TestFire" />
-        <!-- <activity android:name=".UpdateAccountActivity" /> -->
+
         <activity
             android:name=".OnlineBookActivity"
             android:label="@string/title_activity_online_book"
@@ -52,11 +37,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <!--
-<activity
-            android:name=".MapActivity"
-            android:label="Map" />
-        -->
+
         <activity
             android:name=".IndexActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -66,16 +47,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
-<activity
-            android:name=".MyAccountActivity"
-            android:label="@string/title_activity_my_account"
-            android:theme="@style/AppTheme.NoActionBar" />
-        -->
-        <activity
-            android:name=".AboutUsActivity"
-            android:label="@string/title_activity_about_us"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".MyOrderActivity"
             android:label="@string/title_activity_my_order"

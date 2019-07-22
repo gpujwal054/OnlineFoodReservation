@@ -30,16 +30,16 @@ public class PromotionActivity extends AppCompatActivity {
             if (id == R.id.navigation_home) {
                 Intent intent=new Intent(PromotionActivity.this,HomeFragment.class);
                 startActivity(intent);
-            } else if (id == R.id.navigation_menu) {
-                Intent intent=new Intent(PromotionActivity.this,MenuFragment.class);
-                startActivity(intent);
-            } else if (id == R.id.navigation_search) {
-                Intent intent=new Intent(PromotionActivity.this,SearchFragment.class);
-                startActivity(intent);
             } else if (id == R.id.navigation_table) {
                 Intent intent=new Intent(PromotionActivity.this,TableFragment.class);
                 startActivity(intent);
-            }else if (id == R.id.navigation_payment) {
+            } else if (id == R.id.navigation_menu) {
+                Intent intent=new Intent(PromotionActivity.this,MenuFragment.class);
+                startActivity(intent);
+            } else if (id == R.id.navigation_cart) {
+                Intent intent=new Intent(PromotionActivity.this,SearchFragment.class);
+                startActivity(intent);
+            }  else if (id == R.id.navigation_payment) {
                 Intent intent=new Intent(PromotionActivity.this,ShippingPaymentFragment.class);
                 startActivity(intent);
             }

@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuFragment">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -12,63 +11,59 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnFoodFragment"
-                android:layout_width="208dp"
-                android:layout_height="208dp"
-                android:layout_margin="5dp"
-                android:textColor="@color/aqua"
-                android:textSize="24dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
                 android:background="@drawable/food"
-                android:text="Food Menus" />
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Food Menu"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textColor="@color/yellow"/>
 
             <Button
                 android:id="@+id/btnDessertFragment"
-                android:layout_width="208dp"
-                android:layout_height="208dp"
-                android:layout_margin="5dp"
-                android:textColor="@color/white"
-                android:textSize="24dp"
-                android:layout_weight="1"
-                android:background="@drawable/desert"
-                android:text="Dessert Menus" />
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/desert"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Dessert Menu"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textColor="@color/yellow"/>
 
-                <Button
-                    android:id="@+id/btnDrinkFragment"
-                    android:layout_width="208dp"
-                    android:layout_height="208dp"
-                    android:layout_margin="5dp"
-                    android:textSize="24dp"
-                    android:textColor="@color/yellow"
-                    android:layout_weight="1"
-                    android:background="@drawable/drinks"
-                    android:text="Drink Menus" />
+            <Button
+                android:id="@+id/btnDrinkFragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/drinks"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Drink Menu"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textColor="@color/yellow"/>
 
-                <Button
-                    android:id="@+id/btnBarFragment"
-                    android:layout_width="208dp"
-                    android:layout_height="208dp"
-                    android:layout_margin="5dp"
-                    android:textSize="24dp"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_weight="1"
-                    android:background="@drawable/bar"
-                    android:text="Bar Menus" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/btnBarFragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bar"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Bar Menu"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textColor="@color/yellow"/>
 
         </LinearLayout>
 

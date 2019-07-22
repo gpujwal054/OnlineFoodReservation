@@ -7,23 +7,25 @@
         android:title="Home" />
 
     <item
+        android:id="@+id/navigation_table"
+        android:icon="@drawable/table"
+        android:title="Table" />
+
+    <item
         android:id="@+id/navigation_menu"
         android:icon="@drawable/ic_restaurant_menu_black_24dp"
-        android:title="Book Table" />
+        android:title="Menu" />
 
     <item
-        android:id="@+id/navigation_search"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search" />
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp"
+        android:title="Cart" />
 
-    <item
-        android:id="@+id/navigation_table"
-        android:icon="@drawable/my_order"
-        android:title="Table Details" />
+
 
     <item
         android:id="@+id/navigation_payment"
-        android:icon="@drawable/payment"
+        android:icon="@drawable/ic_payment_black_24dp"
         android:title="Payment" />
 
 </menu>

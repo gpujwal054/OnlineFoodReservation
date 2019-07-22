@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BarFragment extends Fragment {
+public class BreakFastFragment extends Fragment {
 
 
-    public BarFragment() {
+    public BreakFastFragment() {
         // Required empty public constructor
     }
 
@@ -25,8 +25,7 @@ public class BarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_bar, container, false);
-        return v;
+        return inflater.inflate(R.layout.fragment_break_fast, container, false);
     }
 
 }

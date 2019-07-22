@@ -28,14 +28,15 @@ public class MyOrderActivity extends AppCompatActivity {
             if (id == R.id.navigation_home) {
                 Intent intent=new Intent(MyOrderActivity.this,HomeFragment.class);
                 startActivity(intent);
+            } else if (id == R.id.navigation_table) {
+                Intent intent=new Intent(MyOrderActivity.this,TableFragment.class);
+                startActivity(intent);
             } else if (id == R.id.navigation_menu) {
                 Intent intent=new Intent(MyOrderActivity.this,MenuFragment.class);
                 startActivity(intent);
-            } else if (id == R.id.navigation_search) {
+            } else if (id == R.id.navigation_cart
+            ) {
                 Intent intent=new Intent(MyOrderActivity.this,SearchFragment.class);
-                startActivity(intent);
-            } else if (id == R.id.navigation_table) {
-                Intent intent=new Intent(MyOrderActivity.this,TableFragment.class);
                 startActivity(intent);
             } else if (id == R.id.navigation_payment) {
                 Intent intent=new Intent(MyOrderActivity.this,ShippingPaymentFragment.class);
