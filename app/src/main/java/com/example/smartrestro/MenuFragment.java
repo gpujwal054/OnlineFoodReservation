@@ -1,6 +1,8 @@
 package com.example.smartrestro;
 
+
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,9 +14,8 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MenuFragment extends Fragment implements View.OnClickListener{
-    Button btnFood,btnDessert,btnDrink,btnBar;
-
+public class MenuFragment extends Fragment implements View.OnClickListener {
+    Button foodBtn,dessertBtn,drinksBtn,barBtn;
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -24,40 +25,39 @@ public class MenuFragment extends Fragment implements View.OnClickListener{
         super.onCreate(savedInstanceState);
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_table, container, false);
-        btnFood = view.findViewById(R.id.btnFoodFragment);
-        btnDessert = view.findViewById(R.id.btnDessertFragment);
-        btnDrink = view.findViewById(R.id.btnDrinkFragment);
-        btnBar = view.findViewById(R.id.btnBarFragment);
-        btnFood.setOnClickListener(this);
-        btnDessert.setOnClickListener(this);
-        btnDrink.setOnClickListener(this);
-        btnBar.setOnClickListener(this);
-        return view;
+        View v = inflater.inflate(R.layout.fragment_menu, container, false);
+        foodBtn = v.findViewById(R.id.btnFood);
+        foodBtn.setOnClickListener(this);
+        dessertBtn = v.findViewById(R.id.btnDessert);
+        dessertBtn.setOnClickListener(this);
+        drinksBtn = v.findViewById(R.id.btnDrinks);
+        drinksBtn.setOnClickListener(this);
+        barBtn = v.findViewById(R.id.btnBar);
+        barBtn.setOnClickListener(this);
+        return v;
     }
 
     @Override
     public void onClick(View v) {
         Fragment fragment = null;
         switch (v.getId()){
-            case R.id.btnFoodFragment:
+            case R.id.btnFood:
                 fragment = new FoodFragment();
                 replaceFragment(fragment);
                 break;
-            case R.id.btnDessertFragment:
+            case R.id.btnDessert:
                 fragment = new DessertFragment();
                 replaceFragment(fragment);
                 break;
-            case R.id.btnDrinkFragment:
+            case R.id.btnDrinks:
                 fragment = new DrinksFragment();
                 replaceFragment(fragment);
                 break;
-            case R.id.btnBarFragment:
+            case R.id.btnBar:
                 fragment = new BarFragment();
                 replaceFragment(fragment);
                 break;

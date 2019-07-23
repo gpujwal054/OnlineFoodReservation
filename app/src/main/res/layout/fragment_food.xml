@@ -1,73 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
-    tools:context=".FoodFragment"
-    tools:visibility="visible">
+    tools:context=".FoodFragment">
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imgBtnBreakfast"
+            <Button
+                android:id="@+id/btnBreakFast"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="24dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:background="@drawable/breakfast" />
+                android:layout_height="150dp"
+                android:background="@drawable/breakfast"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Breakfast Menu"/>
+
+            <Button
+                android:id="@+id/btnPizza"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/pizza"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Pizza Menu"/>
+
+            <Button
+                android:id="@+id/btnBurger"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/burger"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:text="Burger Menu"/>
 
 
-            <TextView
-                android:id="@+id/tVbreakfast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BREAKFAST" />
-
-            <ImageButton
-                android:id="@+id/imgBtnPizza"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="24dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:background="@drawable/piza" />
-
-            <TextView
-                android:id="@+id/tVpizza"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PIZZA" />
-
-            <ImageButton
-                android:id="@+id/imgBtnBurger"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="24dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:background="@drawable/burger" />
-
-            <TextView
-                android:id="@+id/tVburger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BURGER" />
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

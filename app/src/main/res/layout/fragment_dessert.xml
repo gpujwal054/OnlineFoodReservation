@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
-    tools:context=".FoodFragment"
-    tools:visibility="visible">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DessertFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -23,13 +20,13 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imgBtnCake"
+                android:id="@+id/imgBtnmartini"
                 android:layout_width="391dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/cake" />
+                android:src="@drawable/martini" />
 
 
             <LinearLayout
@@ -44,32 +41,31 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/tVcake"
+                            android:id="@+id/tVMartini"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="CAKE" />
+                            android:text="MARTINI" />
                         <TextView
                             android:id="@+id/tVprice"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
                             android:layout_marginEnd="131dp"
-                            android:text="RS:250" />
+                            android:text="RS:450" />
                     </LinearLayout>
 
                     <Button
                         android:id="@+id/btnIncrement1"
+                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
-
                         android:text="+" />
 
                     <EditText
-                        android:id="@+id/textView1"
+                        android:id="@+id/quantity_textview1"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -77,9 +73,7 @@
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
-                        android:text="0"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp" />
+                        android:textColor="@android:color/white"/>
 
                     <Button
                         android:id="@+id/btnDecrement1"
@@ -92,13 +86,14 @@
             </LinearLayout>
 
             <ImageButton
-                android:id="@+id/imgBtnPudding"
+                android:id="@+id/imgBtnMargarita"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
+
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/pudding" />
+                android:src="@drawable/margarita" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,19 +107,20 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/tVPudding"
+                            android:id="@+id/tVmargarita"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="PUDDING" />
+                            android:text="MARGARITA" />
                         <TextView
-                            android:id="@+id/tVPrice"
+                            android:id="@+id/tVmargarita"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
                             android:layout_marginEnd="131dp"
-                            android:text="RS:350" />
+                            android:text="RS:550"
+                            tools:ignore="DuplicateIds" />
                     </LinearLayout>
 
                     <Button
@@ -133,10 +129,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:text="+" />
+                        android:text="+"/>
 
                     <EditText
-                        android:id="@+id/textView2"
+                        android:id="@+id/quantity_textview"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -147,25 +143,27 @@
                         android:text="0"
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
+
                     <Button
                         android:id="@+id/btnDecrement2"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="-" />
+                        android:text="-"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
 
             <ImageButton
-                android:id="@+id/imgBtnBrownie"
+                android:id="@+id/imgBtnBeer"
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/brownie"
+                android:src="@drawable/beer"
                 tools:layout_editor_absoluteX="17dp"
                 tools:layout_editor_absoluteY="504dp" />
 
@@ -181,14 +179,14 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <TextView
-                            android:id="@+id/tVBrownie"
+                            android:id="@+id/tVBeer"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="BROWNIE" />
+                            android:text="BEER" />
                         <TextView
-                            android:id="@+id/tVBrownie1"
+                            android:id="@+id/tVPrice"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="0dp"
@@ -197,7 +195,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
+                        android:id="@+id/btnIncrement3"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
@@ -205,7 +203,7 @@
                         android:text="+" />
 
                     <EditText
-                        android:id="@+id/textView3"
+                        android:id="@+id/quantity_textview3"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -213,12 +211,12 @@
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
-                        android:text="0"
+                        android:text=""
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
 
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement3"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"

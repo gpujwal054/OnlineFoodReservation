@@ -2,12 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
-    tools:context=".FoodFragment"
-    tools:visibility="visible">
+    tools:context=".BarFragment">
 
 
     <ScrollView
@@ -61,15 +58,12 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
+                        android:id="@+id/btnIncrement1"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="increment"
-
-                        android:text="+"
-                        tools:ignore="DuplicateIds,OnClick" />
+                        android:text="+" />
 
                     <EditText
                         android:id="@+id/quantity_textview1"
@@ -80,13 +74,10 @@
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
-                        android:text="0"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        tools:ignore="DuplicateIds" />
+                        android:textColor="@android:color/white"/>
 
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement1"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
@@ -134,15 +125,12 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
+                        android:id="@+id/btnIncrement2"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:onClick="increment"
-
-                        android:text="+"
-                        tools:ignore="DuplicateIds,OnClick" />
+                        android:text="+"/>
 
                     <EditText
                         android:id="@+id/quantity_textview"
@@ -158,13 +146,13 @@
                         android:textSize="16sp" />
 
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement2"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="-"
-                        tools:ignore="DuplicateIds" />
+                       />
                 </LinearLayout>
             </LinearLayout>
 
@@ -174,7 +162,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/beer"
@@ -209,18 +196,15 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/btnIncrement"
+                        android:id="@+id/btnIncrement3"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="increment"
-
-                        android:text="+"
-                        tools:ignore="DuplicateIds,OnClick" />
+                        android:text="+" />
 
                     <EditText
-                        android:id="@+id/quantity_textview"
+                        android:id="@+id/quantity_textview3"
                         android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -228,19 +212,17 @@
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
-                        android:text="0"
+                        android:text=""
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        tools:ignore="DuplicateIds" />
+                        android:textSize="16sp" />
 
                     <Button
-                        android:id="@+id/btnDecrement"
+                        android:id="@+id/btnDecrement3"
                         android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="-"
-                        tools:ignore="DuplicateIds" />
+                        android:text="-" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

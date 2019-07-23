@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffc600</color>
+    <color name="colorPrimary">#FFC600</color>
     <color name="colorPrimaryDark">#00FF47</color>
     <color name="colorAccent">#D81B60</color>
     <color name="maroon">#800000</color>
@@ -15,10 +15,10 @@
     <color name="fuchsia">#FF00FF</color>
     <color name="purple">#800080</color>
     <color name="indianred">#A9DBD8</color>
-    <color name="crimson">#DC143C</color>
-    <color name="firebrick">#B22222</color>
+    <color name="crimson">#D50B33</color>
+    <color name="firebrick">#A91717</color>
     <color name="hotpink">#FF69B4</color>
-    <color name="deeppink">#FF1493</color>
+    <color name="deeppink">#F10889</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 </resources>
