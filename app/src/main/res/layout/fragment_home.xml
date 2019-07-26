@@ -7,10 +7,11 @@
     tools:context=".HomeFragment">
 
     <ScrollView
+        android:id="@+id/homeScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,7 +28,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:adjustViewBounds="true"
-                android:background="@drawable/restaurant_background"/>
+                android:background="@drawable/restaurant_background" />
 
             <TextView
                 android:id="@+id/tVMoto"

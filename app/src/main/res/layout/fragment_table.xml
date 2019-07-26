@@ -6,10 +6,13 @@
     tools:context=".TableFragment">
 
     <ScrollView
+        android:id="@+id/TableScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -18,21 +21,21 @@
                 android:id="@+id/btnFirstFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="First Floor"/>
+                android:text="First Floor" />
 
             <Button
                 android:id="@+id/btnSecondFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="1dp"
-                android:text="Second Floor"/>
+                android:text="Second Floor" />
 
             <Button
                 android:id="@+id/btnBalconyFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="1dp"
-                android:text="Balcony Floor"/>
+                android:text="Balcony Floor" />
 
             <Button
                 android:id="@+id/btnGardenFloor"
@@ -40,7 +43,7 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="10dp"
-                android:text="Garden Floor"/>
+                android:text="Garden Floor" />
 
         </LinearLayout>
 

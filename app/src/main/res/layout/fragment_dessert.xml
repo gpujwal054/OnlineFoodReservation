@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,10 @@
     tools:context=".DessertFragment">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/drinksScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,19 +19,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imgBtnmartini"
+            <Button
+                android:id="@+id/btnCake"
                 android:layout_width="391dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/martini" />
+                android:background="@drawable/cake"
+                android:scaleType="fitCenter" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="90dp">
@@ -40,13 +41,15 @@
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/tVMartini"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="MARTINI" />
+                            android:text="Cake" />
+
                         <TextView
                             android:id="@+id/tVprice"
                             android:layout_width="129dp"
@@ -58,46 +61,46 @@
 
                     <Button
                         android:id="@+id/btnIncrement1"
-                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
                         android:text="+" />
 
                     <EditText
                         android:id="@+id/quantity_textview1"
-                        android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/btnIncrement"
+                        android:layout_marginTop="30dp"
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
 
                     <Button
                         android:id="@+id/btnDecrement1"
-                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
                         android:text="-" />
                 </LinearLayout>
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/imgBtnMargarita"
+            <Button
+                android:id="@+id/btnBrownie"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="24dp"
-
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/margarita" />
+                android:background="@drawable/brownie"
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="90dp">
@@ -106,13 +109,15 @@
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/tVmargarita"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="MARGARITA" />
+                            android:text="Brownie" />
+
                         <TextView
                             android:id="@+id/tVmargarita"
                             android:layout_width="129dp"
@@ -129,14 +134,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:text="+"/>
+                        android:text="+" />
 
                     <EditText
                         android:id="@+id/quantity_textview"
-                        android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/btnIncrement"
+                        android:layout_marginTop="30dp"
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
@@ -146,30 +151,28 @@
 
                     <Button
                         android:id="@+id/btnDecrement2"
-                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
-                        android:text="-"
-                        />
+                        android:text="-" />
                 </LinearLayout>
             </LinearLayout>
 
 
-            <ImageButton
-                android:id="@+id/imgBtnBeer"
+            <Button
+                android:id="@+id/btnPudding"
                 android:layout_width="match_parent"
                 android:layout_height="198dp"
                 android:layout_marginTop="24dp"
                 android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/beer"
-                tools:layout_editor_absoluteX="17dp"
-                tools:layout_editor_absoluteY="504dp" />
+                android:background="@drawable/pudding"
+                android:scaleType="fitCenter" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="90dp">
@@ -178,13 +181,15 @@
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/tVBeer"
                             android:layout_width="129dp"
                             android:layout_height="42dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="131dp"
-                            android:text="BEER" />
+                            android:text="Pudding" />
+
                         <TextView
                             android:id="@+id/tVPrice"
                             android:layout_width="129dp"
@@ -196,18 +201,18 @@
 
                     <Button
                         android:id="@+id/btnIncrement3"
-                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
                         android:text="+" />
 
                     <EditText
                         android:id="@+id/quantity_textview3"
-                        android:layout_marginTop="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/btnIncrement"
+                        android:layout_marginTop="30dp"
                         android:layout_toRightOf="@id/btnIncrement"
                         android:inputType="text"
                         android:padding="15dp"
@@ -217,9 +222,9 @@
 
                     <Button
                         android:id="@+id/btnDecrement3"
-                        android:layout_marginTop="30dp"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
                         android:layout_weight="1"
                         android:text="-" />
                 </LinearLayout>
@@ -227,4 +232,4 @@
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

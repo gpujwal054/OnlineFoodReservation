@@ -19,9 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".MainActivity" />
-
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".OnlineBookActivity"
             android:label="@string/title_activity_online_book"
@@ -47,7 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MyOrderActivity"
             android:label="@string/title_activity_my_order"

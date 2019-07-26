@@ -7,10 +7,13 @@
     tools:context=".ShippingPaymentFragment">
 
     <ScrollView
+        android:id="@+id/PaymentScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutPayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -50,9 +53,9 @@
                     android:layout_height="29dp"
                     android:layout_marginTop="24dp"
                     android:text="Order Item List"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />

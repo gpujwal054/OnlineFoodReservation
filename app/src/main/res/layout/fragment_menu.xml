@@ -6,10 +6,13 @@
     tools:context=".MenuFragment">
 
     <ScrollView
+        android:id="@+id/menuScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -18,48 +21,48 @@
                 android:id="@+id/btnFood"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/food"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:textSize="24dp"
+                android:background="@drawable/food"
+                android:text="Food Menu"
                 android:textColor="@color/white"
-                android:text="Food Menu"/>
+                android:textSize="24dp" />
 
             <Button
                 android:id="@+id/btnDessert"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/desert"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:textSize="24dp"
+                android:background="@drawable/desert"
+                android:text="Dessert Menu"
                 android:textColor="@color/white"
-                android:text="Dessert Menu"/>
+                android:textSize="24dp" />
 
             <Button
                 android:id="@+id/btnDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/drinks"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:textSize="24dp"
+                android:background="@drawable/drinks"
+                android:text="Drinks Menu"
                 android:textColor="@color/white"
-                android:text="Drinks Menu"/>
+                android:textSize="24dp" />
 
             <Button
                 android:id="@+id/btnBar"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/bar"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:textSize="24dp"
+                android:background="@drawable/bar"
+                android:text="Bar Menu"
                 android:textColor="@color/white"
-                android:text="Bar Menu"/>
+                android:textSize="24dp" />
 
         </LinearLayout>
 
