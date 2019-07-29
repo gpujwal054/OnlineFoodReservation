@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBar toolbar;
@@ -43,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
 
-                case R.id.navigation_payment:
-                    toolbar.setTitle("Shipping And Payment");
-                    fragment = new ShippingPaymentFragment();
+                case R.id.navigation_aboutUs:
+                    toolbar.setTitle("About Us");
+                    fragment = new AboutUsFragment();
                     loadFragment(fragment);
                     return true;
             }

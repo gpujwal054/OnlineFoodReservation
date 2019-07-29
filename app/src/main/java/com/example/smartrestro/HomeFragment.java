@@ -3,18 +3,20 @@ package com.example.smartrestro;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements View.OnClickListener {
-    Button order,reserve,delivery;
+public class HomeFragment extends Fragment {
+    CarouselView carouselView;
+    int[] sampleImages = {R.drawable.pizza, R.drawable.desert, R.drawable.drinks, R.drawable.wine, R.drawable.food};
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -29,38 +31,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        order = v.findViewById(R.id.btnOrder);
-        order.setOnClickListener(this);
-        reserve = v.findViewById(R.id.btnReserve);
-        reserve.setOnClickListener(this);
-        delivery = v.findViewById(R.id.btnDelivery);
-        delivery.setOnClickListener(this);
+        carouselView = (CarouselView) v.findViewById(R.id.carouselView);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
         return v;
     }
-
-    @Override
-    public void onClick(View v) {
-        Fragment fragment = null;
-        switch (v.getId()){
-            case R.id.btnOrder:
-                fragment = new MenuFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.btnReserve:
-                fragment = new TableFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.btnDelivery:
-                fragment = new MenuFragment();
-                replaceFragment(fragment);
-                break;
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(sampleImages[position]);
         }
-    }
+    };
 
-    public void replaceFragment(Fragment someFragment){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container,someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
 }

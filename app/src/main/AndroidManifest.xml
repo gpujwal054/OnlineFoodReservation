@@ -22,10 +22,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"></activity>
-        <activity
-            android:name=".OnlineBookActivity"
-            android:label="@string/title_activity_online_book"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google MapActivity-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -47,14 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyOrderActivity"
-            android:label="@string/title_activity_my_order"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".PromotionActivity"
-            android:label="@string/title_activity_promotion"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

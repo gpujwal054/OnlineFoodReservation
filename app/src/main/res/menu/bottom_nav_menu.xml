@@ -24,8 +24,8 @@
 
 
     <item
-        android:id="@+id/navigation_payment"
-        android:icon="@drawable/ic_payment_black_24dp"
-        android:title="Payment" />
+        android:id="@+id/navigation_aboutUs"
+        android:icon="@drawable/about_us"
+        android:title="About Us" />
 
 </menu>

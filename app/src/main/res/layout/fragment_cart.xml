@@ -15,6 +15,12 @@
             android:id="@+id/linearLayoutCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <khalti.widget.KhaltiButton
+                android:id="@+id/khalti_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </ScrollView>
 </FrameLayout>
