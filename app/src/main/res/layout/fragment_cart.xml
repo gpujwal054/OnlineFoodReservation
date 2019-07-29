@@ -17,10 +17,110 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:background="#D800BCD4"
+                android:text="Delivery Details"
+                android:id="@+id/tvDelivery"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Full Name"
+                android:id="@+id/tVName"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:id="@+id/eTName"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="textPersonName"
+                android:ems="10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Address"
+                android:id="@+id/tVAddress"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:id="@+id/eTAddress"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="textPostalAddress"
+                android:ems="10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Phone No."
+                android:id="@+id/tvPhone"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:id="@+id/eTPhone"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="phone"
+                android:ems="10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:background="#D800BCD4"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Khalti Payment"
+                android:id="@+id/tvPayment"/>
             <khalti.widget.KhaltiButton
                 android:id="@+id/khalti_button"
                 android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="We will call you to confirm the order after your order are submitted."
+                android:id="@+id/tvInformation"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Complete Order"
+                android:id="@+id/btnCompleteOrder"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

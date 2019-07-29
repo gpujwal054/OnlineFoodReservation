@@ -20,7 +20,7 @@ public class IndexActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent welcome = new Intent(IndexActivity.this,MainActivity.class);
+                Intent welcome = new Intent(IndexActivity.this,SignInActivity.class);
                 startActivity(welcome);
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 finish();

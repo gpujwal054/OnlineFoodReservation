@@ -34,28 +34,68 @@
                 app:strokeColor="#FF777777"
                 app:strokeWidth="1dp"/>
 
-            <ImageView
-                android:id="@+id/iVImage"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_marginTop="50dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:background="#D800BCD4"
+                android:text="Hungry??? We are here to serve you."
+                android:id="@+id/tvhomeMotto"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:baselineAlignBottom="true"
                 android:adjustViewBounds="true"
-                android:background="@drawable/restaurant_background" />
+                android:id="@+id/homeImg"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/wines"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:baselineAlignBottom="true"
+                android:adjustViewBounds="true"
+                android:id="@+id/restroWines"/>
 
             <TextView
-                android:id="@+id/tVMoto"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="#D800BCD4"
-                android:text='"We are a company of cooks.We passionately believe that restaurant quality food can be made in every setting and we are excited to share it with you!" '
-                android:textColor="#010102"
+                android:layout_height="wrap_content"
+                android:id="@+id/textWines"
                 android:textSize="20sp"
-                app:autoSizeTextType="uniform" />
+                android:textColor="@color/black"
+                android:text="Free of bottle of wine when you spend more than Rs.1000 on a menu."
+                android:layout_gravity="center"/>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/drinks"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:baselineAlignBottom="true"
+                android:adjustViewBounds="true"
+                android:id="@+id/restroDrinks"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDrinks"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="Free of bottle of drink when you spend more than Rs.500 on a menu."
+                android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
