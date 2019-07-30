@@ -37,7 +37,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
                 android:textColor="@android:color/primary_text_light_nodisable"
                 android:background="#D800BCD4"
                 android:text="Hungry??? We are here to serve you."
@@ -46,7 +47,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@drawable/home"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/home"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -58,7 +60,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@drawable/wines"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/wines"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -79,7 +82,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                app:srcCompat="@drawable/drinks"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/drinks"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
