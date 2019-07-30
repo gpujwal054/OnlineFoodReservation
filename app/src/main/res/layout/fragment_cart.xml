@@ -20,91 +20,90 @@
             <TextView
                 android:id="@+id/tvDelivery"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:background="#D800BCD4"
                 android:text="Delivery Details"
                 android:textColor="@android:color/primary_text_light_nodisable"
-                android:textSize="22sp" />
+                android:textSize="24sp" />
 
             <TextView
+                android:id="@+id/tVName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@android:color/primary_text_light_nodisable"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
                 android:text="Full Name"
-                android:id="@+id/tVName"/>
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/eTName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:id="@+id/eTName"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
+                android:ems="10"
                 android:inputType="textPersonName"
-                android:ems="10"/>
+                android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tVAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@android:color/primary_text_light_nodisable"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
                 android:text="Address"
-                android:id="@+id/tVAddress"/>
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/eTAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:id="@+id/eTAddress"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
+                android:ems="10"
                 android:inputType="textPostalAddress"
-                android:ems="10"/>
+                android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tvPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="@android:color/primary_text_light_nodisable"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
                 android:text="Phone No."
-                android:id="@+id/tvPhone"/>
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/eTPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:id="@+id/eTPhone"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="20dp"
+                android:ems="10"
                 android:inputType="phone"
-                android:ems="10"/>
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btnSubmitDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="30dp"
                 android:text="Submit Details"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tvPayment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:background="#D800BCD4"
                 android:text="Khalti Payment"
                 android:textColor="@android:color/primary_text_light_nodisable"
-                android:textSize="22sp" />
+                android:textSize="24sp" />
             <khalti.widget.KhaltiButton
                 android:id="@+id/khalti_button"
                 android:layout_width="wrap_content"
