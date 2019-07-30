@@ -25,8 +25,6 @@
                 android:id="@+id/carouselView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 app:fillColor="#FFFFFFFF"
                 app:pageColor="#00000000"
                 app:radius="6dp"
@@ -37,69 +35,80 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:textSize="18sp"
                 android:textColor="@android:color/primary_text_light_nodisable"
                 android:background="#D800BCD4"
-                android:text="Hungry??? We are here to serve you."
+                android:text='"HUNGRY???"'
                 android:id="@+id/tvhomeMotto"/>
 
-            <ImageView
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@android:color/primary_text_light_nodisable"
+                android:background="#D800BCD4"
+                android:text='"We are here to serve you"'
+                android:id="@+id/tvhomMotto"/>
+
+            <ImageView
+                android:id="@+id/homeImg"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:adjustViewBounds="true"
                 android:background="@drawable/home"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:baselineAlignBottom="true"
-                android:adjustViewBounds="true"
-                android:id="@+id/homeImg"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/restroWines"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:adjustViewBounds="true"
                 android:background="@drawable/wines"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:baselineAlignBottom="true"
-                android:adjustViewBounds="true"
-                android:id="@+id/restroWines"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/textWines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textWines"
-                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:text='"Free of bottle of wine when you spend more than Rs.1000 on a menu."'
                 android:textColor="@color/black"
-                android:text="Free of bottle of wine when you spend more than Rs.1000 on a menu."
-                android:layout_gravity="center"/>
+                android:textSize="18sp" />
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/drinks"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:baselineAlignBottom="true"
-                android:adjustViewBounds="true"
-                android:id="@+id/restroDrinks"/>
-
-            <TextView
+                android:id="@+id/restroDrinks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/drinks"
+                android:baselineAlignBottom="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/textDrinks"
-                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text='"Free of bottle of drink when you spend more than Rs.500 on a menu."'
                 android:textColor="@color/black"
-                android:text="Free of bottle of drink when you spend more than Rs.500 on a menu."
-                android:layout_gravity="center"/>
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
+
 </FrameLayout>

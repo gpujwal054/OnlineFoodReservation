@@ -16,7 +16,7 @@ import com.synnapps.carouselview.ImageListener;
  */
 public class HomeFragment extends Fragment {
     CarouselView carouselView;
-    int[] sampleImages = {R.drawable.pizza, R.drawable.desert, R.drawable.drinks, R.drawable.wines, R.drawable.food};
+    int[] sampleImages = {R.drawable.cup, R.drawable.desert, R.drawable.americanbreakfast, R.drawable.soft_drink, R.drawable.food};
     public HomeFragment() {
         // Required empty public constructor
     }

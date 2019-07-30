@@ -21,29 +21,42 @@
                 android:id="@+id/btnFirstFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="First Floor" />
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:text="First Floor"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btnSecondFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="1dp"
-                android:text="Second Floor" />
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:text="Second Floor"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btnBalconyFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="1dp"
-                android:text="Balcony Floor" />
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:text="Balcony Floor"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btnGardenFloor"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="Garden Floor" />
+                android:text="Garden Floor"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
