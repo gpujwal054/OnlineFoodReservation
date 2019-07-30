@@ -8,22 +8,24 @@
 
     <ImageView
         android:id="@+id/imageViewLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="223dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smart_icon" />
+        app:srcCompat="@drawable/chef" />
 
     <TextView
         android:id="@+id/textViewSmart"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Smart Restro"
+        android:text="SMART RESTRO"
         android:textAlignment="center"
-        android:textColor="@color/crimson"
-        android:textSize="56sp"
+        android:textColor="@color/pink500"
+        android:textSize="40sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +33,12 @@
 
     <TextView
         android:id="@+id/textViewDesc"
-        android:layout_width="327dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
         android:text='"Get your food at your home. The easiest online app in your market."'
         android:textAlignment="center"
-        android:textColor="@color/firebrick"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"

@@ -39,7 +39,6 @@
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textColor="@android:color/primary_text_light_nodisable"
-                android:background="#D800BCD4"
                 android:text='"HUNGRY???"'
                 android:id="@+id/tvhomeMotto"/>
 
@@ -49,7 +48,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textColor="@android:color/primary_text_light_nodisable"
-                android:background="#D800BCD4"
+
                 android:text='"We are here to serve you"'
                 android:id="@+id/tvhomMotto"/>
 
