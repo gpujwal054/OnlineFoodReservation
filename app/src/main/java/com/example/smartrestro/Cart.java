@@ -1,17 +1,24 @@
 package com.example.smartrestro;
 
 public class Cart {
-    String productName,productQuantity,productPrice,netAmount,totalPrice;
+    String productId, productName,productQuantity,productPrice;
 
     public Cart() {
     }
 
-    public Cart(String productName, String productQuantity, String productPrice, String netAmount, String totalPrice) {
+    public Cart(String productId, String productName, String productQuantity, String productPrice) {
+        this.productId = productId;
         this.productName = productName;
         this.productQuantity = productQuantity;
         this.productPrice = productPrice;
-        this.netAmount = netAmount;
-        this.totalPrice = totalPrice;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -36,21 +43,5 @@ public class Cart {
 
     public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
-    }
-
-    public String getNetAmount() {
-        return netAmount;
-    }
-
-    public void setNetAmount(String netAmount) {
-        this.netAmount = netAmount;
-    }
-
-    public String getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(String totalPrice) {
-        this.totalPrice = totalPrice;
     }
 }
