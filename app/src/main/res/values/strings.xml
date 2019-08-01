@@ -51,4 +51,6 @@
     <string name="product_name">Product Name</string>
     <string name="product_quantity">Product Quantity</string>
     <string name="product_price">Product Price</string>
+    <string name="insert_product_name">Insert Product</string>
+    <string name="insert_product_price">Insert Product Price</string>
 </resources>
