@@ -19,7 +19,6 @@
             android:orientation="vertical">
 
             <LinearLayout
-<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
@@ -28,53 +27,30 @@
                     android:id="@+id/button1"
                     android:layout_width="100dp"
                     android:theme="@style/Button1Style"
-                    android:layout_height="100dp"
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
-
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
-                    android:text="Table 1" />
+                    android:layout_height="100dp"/>
 
                 <Button
                     android:id="@+id/button2"
-<<<<<<< HEAD
                     android:layout_width="100dp"
                     android:theme="@style/Button2Style"
                     android:layout_height="100dp"
-=======
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
                     android:text="Table 2" />
 
                 <Button
                     android:id="@+id/button3"
-<<<<<<< HEAD
                     android:layout_width="100dp"
                     android:theme="@style/Button3Style"
                     android:layout_height="100dp"
-=======
-                    android:layout_width="105dp"
-                    android:layout_height="105dp"
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
                     android:text="Table 3" />
 
             </LinearLayout>
 
             <LinearLayout
-<<<<<<< HEAD
+
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
+
 
                 <Button
                     android:id="@+id/button4"
@@ -97,14 +73,9 @@
             </LinearLayout>
 
             <LinearLayout
-<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button7"

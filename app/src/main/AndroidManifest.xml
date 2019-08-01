@@ -19,11 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".InsertMenuActivity"></activity>
-=======
         <activity android:name=".AdminSignInActivity"></activity>
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
         <activity android:name=".ResetPassActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />

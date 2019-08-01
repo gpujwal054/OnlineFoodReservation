@@ -18,14 +18,10 @@
             android:orientation="vertical">
 
             <LinearLayout
-<<<<<<< HEAD
+
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button1"
@@ -48,14 +44,10 @@
             </LinearLayout>
 
             <LinearLayout
-<<<<<<< HEAD
+
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button4"
@@ -78,14 +70,9 @@
             </LinearLayout>
 
             <LinearLayout
-<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
-=======
-                android:layout_width="match_parent"
-                android:layout_height="120dp">
->>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button7"
