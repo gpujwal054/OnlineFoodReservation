@@ -10,73 +10,48 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class SignInActivity extends AppCompatActivity implements View.OnClickListener{
-    //defining views
-    private Button buttonSignIn;
+public class AdminSignInActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button adminSignIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private TextView textViewSignup,forgPass,admin;
 
-    //firebase auth object
     private FirebaseAuth firebaseAuth;
 
     //progress dialog
     private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
-        //getting firebase auth object
+        setContentView(R.layout.activity_admin_sign_in);
         firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
-            finish();
-        }
         //initializing views
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonSignIn = (Button) findViewById(R.id.buttonSignin);
-        admin = (TextView) findViewById(R.id.tvAdmin);
-        textViewSignup  = (TextView) findViewById(R.id.textViewSignUp);
-        forgPass = findViewById(R.id.textViewForgPass);
         progressDialog = new ProgressDialog(this);
-
-        //attaching click listener
-        buttonSignIn.setOnClickListener(this);
-        admin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this,AdminSignInActivity.class);
-                startActivity(intent);
-            }
-        });
-        textViewSignup.setOnClickListener(this);
-        forgPass.setOnClickListener(this);
+        adminSignIn = (Button) findViewById(R.id.btnSignin);
     }
 
-    //method for user login
-    private void userLogin(){
+    private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
 
         //checking if email and passwords are empty
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password", Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -86,40 +61,26 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         progressDialog.setMessage("Signing Please Wait...");
         progressDialog.show();
 
-
+        //logging in the user
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         //if the task is successfull
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //start the profile activity
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }
                     }
                 });
-
     }
-
-
 
     @Override
     public void onClick(View view) {
-        if(view == buttonSignIn){
+        if (view == adminSignIn) {
             userLogin();
         }
-
-        if(view == textViewSignup){
-            finish();
-            startActivity(new Intent(this, SignUpActivity.class));
-        }
-
-        if (view == forgPass){
-            finish();
-            startActivity(new Intent(this,ResetPassActivity.class));
-        }
-
     }
 }

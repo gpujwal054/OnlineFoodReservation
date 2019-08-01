@@ -18,76 +18,91 @@
             android:orientation="vertical">
 
             <LinearLayout
+<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
+=======
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+>>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 1" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 2" />
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 3" />
 
             </LinearLayout>
 
             <LinearLayout
+<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
+=======
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+>>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 4" />
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 5" />
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 6" />
 
             </LinearLayout>
 
             <LinearLayout
+<<<<<<< HEAD
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp">
+=======
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+>>>>>>> 84a80b8943be2976b0e07947ba23a01b0c1aa649
 
                 <Button
                     android:id="@+id/button7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 7" />
 
                 <Button
                     android:id="@+id/button8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 8" />
 
                 <Button
                     android:id="@+id/button9"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 9" />
 
             </LinearLayout>
