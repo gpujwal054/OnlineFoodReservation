@@ -9,13 +9,30 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.bumptech.glide.util.ExceptionCatchingInputStream;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import khalti.checkOut.api.Config;
 import khalti.checkOut.api.OnCheckOutListener;
 import khalti.checkOut.helper.KhaltiCheckOut;
 import khalti.widget.KhaltiButton;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 
 public class CartFragment extends Fragment implements View.OnClickListener{
@@ -25,6 +42,13 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         @Override
         public void onSuccess(HashMap<String, Object> data) {
             Log.i("Payment confirmed", data+"");
+            try{
+                postRequest(data);
+            }
+            catch (Exception e){
+                
+                Log.d("Error", e.toString());
+            }
         }
 
         @Override
@@ -56,4 +80,45 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         KhaltiCheckOut khaltiCheckOut = new KhaltiCheckOut(getContext(), config);
         khaltiCheckOut.show();
     }
+
+    public void postRequest(HashMap<String, Object> data) throws IOException {
+
+        MediaType MEDIA_TYPE = MediaType.parse("application/json");
+        String url = "https://khalti.com/api/v2/payment/verify/";
+
+        OkHttpClient client = new OkHttpClient();
+
+        JSONObject postdata = new JSONObject();
+        try {
+            postdata.put("token", data.get("token"));
+            postdata.put("amount", data.get("amount"));
+        } catch(JSONException e){
+            e.printStackTrace();
+        }
+
+        RequestBody body = RequestBody.create(MEDIA_TYPE, postdata.toString());
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .header("Authorization", "Key test_secret_key_d16ef4f1e9604068ba81d67d3b2d4b01")
+                .header("Accept", "application/json")
+                .header("Content-Type", "application/json")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                String mMessage = e.getMessage().toString();
+                Log.w("failure Response", mMessage);
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                String mMessage = response.body().string();
+            }
+        });
+    }
+
+
 }
