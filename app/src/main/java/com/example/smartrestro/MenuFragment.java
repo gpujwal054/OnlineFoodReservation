@@ -1,21 +1,52 @@
 package com.example.smartrestro;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.TextView;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MenuFragment extends Fragment implements View.OnClickListener {
-    Button foodBtn,dessertBtn,drinksBtn,barBtn;
+public class MenuFragment extends Fragment  {
+    DatabaseReference databaseReference;
+    List<String> list = new ArrayList<>();
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+
     public MenuFragment() {
         // Required empty public constructor
     }
@@ -23,52 +54,17 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_menu, container, false);
-        foodBtn = v.findViewById(R.id.btnFood);
-        foodBtn.setOnClickListener(this);
-        dessertBtn = v.findViewById(R.id.btnDessert);
-        dessertBtn.setOnClickListener(this);
-        drinksBtn = v.findViewById(R.id.btnDrinks);
-        drinksBtn.setOnClickListener(this);
-        barBtn = v.findViewById(R.id.btnBar);
-        barBtn.setOnClickListener(this);
+        recyclerView = v.findViewById(R.id.)
         return v;
-    }
-
-    @Override
-    public void onClick(View v) {
-        Fragment fragment = null;
-        switch (v.getId()){
-            case R.id.btnFood:
-                fragment = new FoodFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.btnDessert:
-                fragment = new DessertFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.btnDrinks:
-                fragment = new DrinksFragment();
-                replaceFragment(fragment);
-                break;
-            case R.id.btnBar:
-                fragment = new BarFragment();
-                replaceFragment(fragment);
-                break;
-
-        }
-    }
-
-    public void replaceFragment(Fragment someFragment){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container,someFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 }

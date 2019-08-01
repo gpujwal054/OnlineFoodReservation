@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "224923572874-2r2bhkrpi6uqsmkgjovfk3g60q7ste1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartrestro",
+            "certificate_hash": "850eb5b4caa2da31e3e75c5829dffd672c4d9c40"
+          }
+        },
+        {
           "client_id": "224923572874-qukoam96qr9rhmsu314gesd1hgi1tdto.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

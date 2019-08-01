@@ -22,6 +22,7 @@ public class TableFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -30,6 +31,7 @@ public class TableFragment extends Fragment implements View.OnClickListener {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_table, container, false);
+
         btnFirst = view.findViewById(R.id.btnFirstFloor);
         btnSecond = view.findViewById(R.id.btnSecondFloor);
         btnBalcony = view.findViewById(R.id.btnBalconyFloor);
