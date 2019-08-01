@@ -20,72 +20,72 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="120dp">
 
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 1" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 2" />
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 3" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="120dp">
 
                 <Button
                     android:id="@+id/button4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 4" />
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 5" />
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 6" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="120dp">
 
                 <Button
                     android:id="@+id/button7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 7" />
 
                 <Button
                     android:id="@+id/button8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 8" />
 
                 <Button
                     android:id="@+id/button9"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:text="Table 9" />
 
             </LinearLayout>
