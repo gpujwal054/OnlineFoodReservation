@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import android.widget.Toast;
 
 import com.bumptech.glide.util.ExceptionCatchingInputStream;
 import com.squareup.okhttp.Call;
@@ -56,7 +55,7 @@ public class CartFragment extends Fragment implements View.OnClickListener{
                 postRequest(data);
             }
             catch (Exception e){
-                
+
                 Log.d("Error", e.toString());
             }
         }

@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,12 +19,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminSignInActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button adminSignIn;
+    private Button buttonSignIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private TextView forgPass;
 
     private FirebaseAuth firebaseAuth;
-
     //progress dialog
     private ProgressDialog progressDialog;
 
@@ -35,23 +36,28 @@ public class AdminSignInActivity extends AppCompatActivity implements View.OnCli
         //initializing views
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        buttonSignIn = (Button) findViewById(R.id.buttonSignin);
+        forgPass = findViewById(R.id.textViewForgPass);
         progressDialog = new ProgressDialog(this);
-        adminSignIn = (Button) findViewById(R.id.btnSignin);
+
+        //attaching click listener
+        buttonSignIn.setOnClickListener(this);
     }
 
-    private void userLogin() {
+    //method for user login
+    private void userLogin(){
         String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        String password  = editTextPassword.getText().toString().trim();
 
 
         //checking if email and passwords are empty
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
             return;
         }
 
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this,"Please enter password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -61,26 +67,33 @@ public class AdminSignInActivity extends AppCompatActivity implements View.OnCli
         progressDialog.setMessage("Signing Please Wait...");
         progressDialog.show();
 
-        //logging in the user
+
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         //if the task is successfull
-                        if (task.isSuccessful()) {
+                        if(task.isSuccessful()){
                             //start the profile activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), InsertMenuActivity.class));
                         }
                     }
                 });
+
     }
 
     @Override
     public void onClick(View view) {
-        if (view == adminSignIn) {
+        if(view == buttonSignIn){
             userLogin();
         }
+
+        if (view == forgPass){
+            finish();
+            startActivity(new Intent(this,ResetPassActivity.class));
+        }
+
     }
 }

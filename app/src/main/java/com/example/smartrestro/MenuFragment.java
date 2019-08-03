@@ -70,7 +70,7 @@ public class MenuFragment extends Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_menu, container, false);
-        recyclerView = v.findViewById(R.id.myrecyclerview);
+        //recyclerView = v.findViewById(R.id.myrecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         name = v.findViewById(R.id.tvMenu);
         price = v.findViewById(R.id.tvPrice);
@@ -95,7 +95,7 @@ public class MenuFragment extends Fragment  {
                     if(dataSnapshot.hasChild("productImage"))
                     {
                         String string = dataSnapshot.child("productImage").getValue().toString();
-                        image.setText(string);
+
 
                     }
 
